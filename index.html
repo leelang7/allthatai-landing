@@ -196,24 +196,25 @@
       <!-- AuraView -->
       <a class="card" href="https://auraview.allthatai.kr/ui" target="_blank" rel="noopener"
          onmousemove="this.style.setProperty('--mx', event.offsetX + 'px')">
-        <span class="tag beta">LIVE</span>
+        <span class="tag beta">LIVE · 8 TABS</span>
         <div class="sub">// K-PERCEPTION PLATFORM</div>
         <h3>AuraView</h3>
         <p>
-          Tesla-style Occupancy Network + Fleet Learning 을 한국 도심 교차로에 이식.
-          블랙박스 한 대로 가려진 신호·보행자·사각지대까지 확률로 복원하는 안전 주행 지원 시스템.
-          <strong style="color:#c8d6ea;">2026 국토교통 데이터활용 경진대회 출품작.</strong>
+          Tesla-style Occupancy + Fleet Learning + E2E Risk Transformer 를 한국 도심 교차로에 이식.
+          BEV 3D · 사고 재현 영상 · 6종 공공데이터 융합 · K-MaaS 우회 추천 통합 플랫폼.
+          <strong style="color:#c8d6ea;">2026 국토교통 데이터활용 경진대회 출품작 (가점 25점 + ⭐ 특별상).</strong>
         </p>
         <div class="badges">
           <span class="badge hot">YOLOv8</span>
           <span class="badge">FastAPI</span>
           <span class="badge">Three.js BEV</span>
-          <span class="badge">PWA</span>
+          <span class="badge">Flutter + PWA</span>
           <span class="badge hot">E2E Transformer</span>
+          <span class="badge hot">K-MaaS</span>
         </div>
         <div class="cta">
           <span class="url">auraview.allthatai.kr</span>
-          <span class="arrow">→ OPEN</span>
+          <span class="arrow">→ /ui · /pwa · /slides · /kiosk</span>
         </div>
       </a>
 
@@ -259,11 +260,25 @@
     </div>
 
     <div class="stats">
-      <div class="stat"><div class="n">2026 <em>Q2</em></div><div class="l">first release</div></div>
-      <div class="stat"><div class="n"><em>2</em></div><div class="l">live products</div></div>
-      <div class="stat"><div class="n"><em>6</em></div><div class="l">public data sources</div></div>
-      <div class="stat"><div class="n"><em>100%</em></div><div class="l">open to collab</div></div>
+      <div class="stat"><div class="n" id="liveFleet">…</div><div class="l">fleet contributions</div></div>
+      <div class="stat"><div class="n" id="liveScenarios">…</div><div class="l">accident reenactments</div></div>
+      <div class="stat"><div class="n"><em>5.72</em>s</div><div class="l">avg early warning</div></div>
+      <div class="stat"><div class="n"><em>0.94</em></div><div class="l">risk model AUC</div></div>
     </div>
+
+    <script>
+      // 랜딩에서 AuraView 의 라이브 통계 가져와 표시 (실패 시 무시)
+      (async function () {
+        try {
+          const fl = await fetch('https://auraview.allthatai.kr/fleet/stats').then(r => r.json());
+          document.getElementById('liveFleet').innerHTML = `<em>${fl.total ?? 0}</em>`;
+        } catch (e) { document.getElementById('liveFleet').innerHTML = '<em>—</em>'; }
+        try {
+          const sc = await fetch('https://auraview.allthatai.kr/scenario/list').then(r => r.json());
+          document.getElementById('liveScenarios').innerHTML = `<em>${(sc.items || []).length}</em>`;
+        } catch (e) { document.getElementById('liveScenarios').innerHTML = '<em>—</em>'; }
+      })();
+    </script>
 
     <footer id="contact">
       <div class="row">
