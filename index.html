@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>AllThatAI — 실전 AI 프로덕트 포트폴리오 · 이석창</title>
-  <meta name="description" content="이석창(AllThatAI)의 실전 AI 포트폴리오 — 한국 도로 협업 인지 자율주행 AuraView, 지하철 혼잡도 MetroEyes, 공정위 의결서 RAG LexPulse, 임금체불 예측 WageGuard, 롤 실시간 트래커 LoL Butler. 출간 도서 ‘테슬라처럼 만드는 비전 자율주행과 피지컬 AI’."/>
+  <meta name="description" content="이석창(AllThatAI) — 출간 도서 ‘테슬라처럼 만드는 비전 자율주행과 피지컬 AI’ 저자. 48개 AI 도구 허브 AllThatAI Real, 자율주행 협업 인지 AuraView, 지하철 혼잡도 MetroEyes, 공정위 의결서 RAG LexPulse, 임금체불 예측 WageGuard 등 실전 AI 프로덕트를 빌드합니다."/>
   <meta name="author" content="이석창 (Seokchang Lee)"/>
   <meta name="keywords" content="AllThatAI, 이석창, AI 포트폴리오, 자율주행, V2V, AuraView, MetroEyes, LexPulse, WageGuard, RAG, 공공데이터 AI, 피지컬 AI"/>
   <link rel="canonical" href="https://allthatai.kr/"/>
@@ -57,15 +57,36 @@
         "knowsAbout": ["자율주행 인지", "V2V 협업 인지", "RAG", "공공데이터 AI", "온디바이스 AI", "Physical AI"]
       },
       {
+        "@type": "Book",
+        "@id": "https://allthatai.kr/#book",
+        "name": "테슬라처럼 만드는 비전 자율주행과 피지컬 AI",
+        "author": {"@id": "https://allthatai.kr/#person"},
+        "inLanguage": "ko",
+        "bookFormat": "https://schema.org/EBook",
+        "numberOfPages": 220,
+        "image": "https://allthatai.kr/book-cover.png",
+        "url": "https://bookk.co.kr/bookStore/69eb15e3ee2f092c79a5fc74",
+        "offers": {"@type": "Offer", "price": "14900", "priceCurrency": "KRW", "availability": "https://schema.org/InStock", "url": "https://bookk.co.kr/bookStore/69eb15e3ee2f092c79a5fc74"}
+      },
+      {
+        "@type": "WebApplication",
+        "name": "AllThatAI Real",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web",
+        "url": "https://allthatai-real.vercel.app/",
+        "description": "한국 생활 행정의 무료 우회 경로 — 세금·직구·계약·보험·면접 등 48개 AI 도구 허브",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}
+      },
+      {
         "@type": "ItemList",
         "name": "AllThatAI Projects",
         "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "AuraView — K-Perception 자율주행 보조", "url": "https://auraview.allthatai.kr/ui"},
-          {"@type": "ListItem", "position": 2, "name": "MetroEyes — 실시간 지하철 혼잡도 BEV", "url": "https://leelang7.github.io/MetroEyes/"},
-          {"@type": "ListItem", "position": 3, "name": "LexPulse — 공정위 의결서 RAG", "url": "https://github.com/leelang7/LexPulse"},
-          {"@type": "ListItem", "position": 4, "name": "WageGuard — 임금체불 위험 예측 AI", "url": "https://github.com/leelang7/WageGuard"},
-          {"@type": "ListItem", "position": 5, "name": "LoL Butler — 실시간 게임 트래커", "url": "https://lolbutler.allthatai.kr"},
-          {"@type": "ListItem", "position": 6, "name": "도서: 테슬라처럼 만드는 비전 자율주행과 피지컬 AI", "url": "https://bookk.co.kr/bookStore/69eb15e3ee2f092c79a5fc74"}
+          {"@type": "ListItem", "position": 1, "name": "AllThatAI Real — 48개 AI 도구 허브", "url": "https://allthatai-real.vercel.app/"},
+          {"@type": "ListItem", "position": 2, "name": "AuraView — K-Perception 자율주행 보조", "url": "https://auraview.allthatai.kr/ui"},
+          {"@type": "ListItem", "position": 3, "name": "MetroEyes — 실시간 지하철 혼잡도 BEV", "url": "https://leelang7.github.io/MetroEyes/"},
+          {"@type": "ListItem", "position": 4, "name": "LexPulse — 공정위 의결서 RAG", "url": "https://github.com/leelang7/LexPulse"},
+          {"@type": "ListItem", "position": 5, "name": "WageGuard — 임금체불 위험 예측 AI", "url": "https://github.com/leelang7/WageGuard"},
+          {"@type": "ListItem", "position": 6, "name": "LoL Butler — 실시간 게임 트래커", "url": "https://lolbutler.allthatai.kr"}
         ]
       }
     ]
@@ -211,11 +232,52 @@
     footer .row { display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between; }
     footer a { color:var(--muted); text-decoration:none; }
     footer a:hover { color:var(--accent); }
+    /* ── FEATURED BOOK ── */
+    .featured-book {
+      display:grid; grid-template-columns:260px 1fr; gap:40px; align-items:center;
+      margin:0 0 44px; padding:34px; border:1px solid var(--border2); border-radius:22px;
+      background:linear-gradient(135deg, rgba(255,59,59,0.06), var(--surface) 58%);
+      box-shadow:var(--shadow); position:relative; overflow:hidden;
+    }
+    .featured-book::after {
+      content:''; position:absolute; top:-40%; right:-10%; width:340px; height:340px;
+      background:radial-gradient(circle, rgba(0,200,255,0.10), transparent 70%); pointer-events:none;
+    }
+    .fb-cover { display:block; position:relative; z-index:1; }
+    .fb-cover img { width:100%; height:auto; border-radius:10px; display:block;
+                    box-shadow:0 16px 44px rgba(0,0,0,0.6); transition:transform .25s ease; }
+    .fb-cover:hover img { transform:translateY(-4px) scale(1.012); }
+    .fb-body { position:relative; z-index:1; }
+    .fb-title { font-family:'Black Han Sans',sans-serif; font-size:clamp(26px,3.4vw,40px);
+                line-height:1.12; margin:10px 0; }
+    .fb-title em { font-style:normal; background:linear-gradient(135deg,var(--accent),var(--accent2));
+                   -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    .fb-sub { color:var(--muted); font-size:15px; margin-bottom:16px; line-height:1.6; }
+    .fb-points { list-style:none; display:flex; flex-direction:column; gap:7px; margin-bottom:18px; }
+    .fb-points li { color:var(--text); font-size:13.5px; padding-left:20px; position:relative; line-height:1.5; }
+    .fb-points li::before { content:'▹'; position:absolute; left:0; color:var(--accent); }
+    .fb-price { font-family:'JetBrains Mono',monospace; margin-bottom:18px; font-size:14px; }
+    .fb-price s { color:var(--muted); margin-right:8px; }
+    .fb-price strong { color:var(--safe); font-size:23px; letter-spacing:-0.5px; }
+    .fb-price span { color:var(--warn); font-size:11px; margin-left:8px; letter-spacing:1px; }
+    .fb-cta { display:flex; flex-wrap:wrap; gap:10px; }
+    .btn { font-family:'JetBrains Mono',monospace; font-size:13px; padding:11px 18px; border-radius:10px;
+           text-decoration:none; border:1px solid var(--border2); color:var(--text); transition:all .2s; }
+    .btn:hover { border-color:var(--accent); color:var(--accent); transform:translateY(-2px); }
+    .btn.primary { background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#080c14;
+                   border:none; font-weight:700; box-shadow:var(--glow); }
+    .btn.primary:hover { color:#080c14; }
+    .btn.ghost { color:var(--muted); }
+    /* ── FLAGSHIP CARD (full-width) ── */
+    .card.flagship { grid-column:1 / -1; min-height:auto; }
+    .card.flagship h3 { font-size:28px; }
     @media (max-width:640px) {
       .wrap { padding:40px 20px 60px; }
       header { margin-bottom:48px; }
       nav { display:none; }
       .card { min-height:240px; padding:22px; }
+      .featured-book { grid-template-columns:1fr; gap:22px; padding:24px; }
+      .fb-cover { max-width:200px; }
     }
   </style>
 </head>
@@ -228,6 +290,7 @@
         <div><em>All</em>ThatAI</div>
       </div>
       <nav>
+        <a href="#book">BOOK</a>
         <a href="#projects">PROJECTS</a>
         <a href="https://github.com/leelang7" target="_blank" rel="noopener">GITHUB</a>
         <a href="#contact">CONTACT</a>
@@ -238,16 +301,41 @@
       <div class="eyebrow">PORTFOLIO · 2026</div>
       <h1>실전 <em>AI 프로덕트</em>를<br>꾸준히 빌드합니다.</h1>
       <p class="lede">
+        48개 AI 도구 허브 <strong style="color:var(--accent);">AllThatAI Real</strong>,
         자율주행 협업 인지 <strong style="color:var(--accent);">AuraView</strong>,
         실시간 지하철 혼잡도 <strong style="color:var(--accent);">MetroEyes</strong>,
-        공정위 의결서 RAG <strong style="color:var(--accent);">LexPulse</strong>,
-        임금체불 예측 <strong style="color:var(--accent);">WageGuard</strong> 까지 —
-        공모전과 실서비스로 검증한 실전 AI 프로덕트를 만듭니다.
+        공정위 의결서 RAG <strong style="color:var(--accent);">LexPulse</strong> —
+        그리고 출간 도서 <strong style="color:var(--accent);">“테슬라처럼 만드는 비전 자율주행과 피지컬 AI”</strong>.
         <em style="font-style:normal;color:var(--accent);">Tesla 도 못 하는, 한국에서만 가능한 AI.</em>
       </p>
       <div class="tagline">
         <span class="pulse"></span>
-        <span>포트폴리오 가동 중 · 6 projects · 3 live demos · 1 published book</span>
+        <span>포트폴리오 가동 중 · 48 AI tools · 6 projects · 1 published book</span>
+      </div>
+    </section>
+
+    <!-- ── FEATURED 저서 ── -->
+    <section class="featured-book" id="book">
+      <a class="fb-cover" href="https://bookk.co.kr/bookStore/69eb15e3ee2f092c79a5fc74" target="_blank" rel="noopener">
+        <img src="/book-cover.png" width="700" height="1050" loading="eager"
+             alt="테슬라처럼 만드는 비전 자율주행과 피지컬 AI — 이석창 지음, All That AI Vol.01"/>
+      </a>
+      <div class="fb-body">
+        <div class="eyebrow">FEATURED · 출간 도서 · ALL THAT AI VOL.01</div>
+        <h2 class="fb-title">테슬라처럼 만드는<br><em>비전 자율주행과 피지컬 AI</em></h2>
+        <p class="fb-sub">카메라 한 대에서 Optimus 까지, 픽셀이 핸들이 되는 여정. — 이석창(Seokchang Lee) 지음</p>
+        <ul class="fb-points">
+          <li>Vision-only · End-to-End — “픽셀이 핸들이 되는” FSD v12 관점으로 자율주행을 풀어냄</li>
+          <li>자율주행을 넘어 <strong style="color:var(--accent);">Physical AI</strong> — Optimus · Isaac Lab · VLA · World Model</li>
+          <li>모방학습 주력(BC → HG-DAgger) · 저자의 2026 <em style="font-style:normal;color:var(--accent);">See-ParkingNet</em> 논문 기반</li>
+          <li>8부 30장 + 부록 4 · 220p · 장별 실습 코드·QR 동반(공식 GitHub 저장소)</li>
+        </ul>
+        <div class="fb-price"><s>19,900원</s> <strong>14,900원</strong> <span>런칭 4주 한정</span></div>
+        <div class="fb-cta">
+          <a class="btn primary" href="https://bookk.co.kr/bookStore/69eb15e3ee2f092c79a5fc74" target="_blank" rel="noopener">부크크에서 구매 →</a>
+          <a class="btn" href="https://allthatai.upaper.kr/content/1214406" target="_blank" rel="noopener">유페이퍼 →</a>
+          <a class="btn ghost" href="https://github.com/leelang7/physical-ai-book" target="_blank" rel="noopener">실습 코드 ↗</a>
+        </div>
       </div>
     </section>
 
@@ -257,6 +345,30 @@
     </div>
 
     <div class="grid">
+
+      <!-- AllThatAI Real (flagship hub) -->
+      <a class="card flagship" href="https://allthatai-real.vercel.app/" target="_blank" rel="noopener"
+         onmousemove="this.style.setProperty('--mx', event.offsetX + 'px')">
+        <span class="tag beta">FLAGSHIP · 48 AI TOOLS</span>
+        <div class="sub">// AI LIFE-ADMIN HUB</div>
+        <h3>AllThatAI Real</h3>
+        <p>
+          한국에서 모르고 돈 내고 있는 절차의 <strong style="color:var(--accent);">무료 우회 경로</strong>.
+          세금·해외직구·계약 검토·보험·면접·자소서·중고거래 사기탐지·차/코인/카드 추천까지 —
+          <strong style="color:var(--accent);">48개 AI 도구</strong>를 한곳에. “불필요한 대행 거치지 마세요.”
+        </p>
+        <div class="badges">
+          <span class="badge hot">48 AI Tools</span>
+          <span class="badge hot">세금·직구·계약</span>
+          <span class="badge">사기탐지</span>
+          <span class="badge">면접·자소서</span>
+          <span class="badge">Astro · Serverless</span>
+        </div>
+        <div class="cta">
+          <span class="url">real.allthatai.kr</span>
+          <span class="arrow">→ OPEN</span>
+        </div>
+      </a>
 
       <!-- AuraView -->
       <a class="card" href="https://auraview.allthatai.kr/ui" target="_blank" rel="noopener"
@@ -373,29 +485,6 @@
         <div class="cta">
           <span class="url">github · WageGuard</span>
           <span class="arrow">→ CODE</span>
-        </div>
-      </a>
-
-      <!-- 도서 -->
-      <a class="card" href="https://bookk.co.kr/bookStore/69eb15e3ee2f092c79a5fc74" target="_blank" rel="noopener"
-         onmousemove="this.style.setProperty('--mx', event.offsetX + 'px')">
-        <span class="tag beta">BOOK · VOL.01</span>
-        <div class="sub">// PUBLISHED BOOK</div>
-        <h3>비전 자율주행과 피지컬 AI</h3>
-        <p>
-          도서 <strong style="color:var(--accent);">“테슬라처럼 만드는 비전 자율주행과 피지컬 AI”</strong> —
-          카메라 한 대에서 Optimus까지, 픽셀이 핸들이 되는 여정. All That AI Vol.01, 이석창 지음.
-          장별 실습 코드·정오표 공개.
-        </p>
-        <div class="badges">
-          <span class="badge hot">부크크</span>
-          <span class="badge">유페이퍼</span>
-          <span class="badge">Vision Drive</span>
-          <span class="badge">Physical AI</span>
-        </div>
-        <div class="cta">
-          <span class="url">bookk · 전자책</span>
-          <span class="arrow">→ 구매</span>
         </div>
       </a>
 
