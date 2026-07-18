@@ -82,12 +82,15 @@
         "name": "AllThatAI Projects",
         "itemListElement": [
           {"@type": "ListItem", "position": 1, "name": "AllThatAI Real — 48개 AI 도구 허브", "url": "https://allthatai-real.vercel.app/"},
-          {"@type": "ListItem", "position": 2, "name": "AuraView — K-Perception 자율주행 보조", "url": "https://auraview.allthatai.kr/ui"},
-          {"@type": "ListItem", "position": 3, "name": "MetroEyes — 실시간 지하철 혼잡도 BEV", "url": "https://leelang7.github.io/MetroEyes/"},
-          {"@type": "ListItem", "position": 4, "name": "LexPulse — 공정위 의결서 RAG", "url": "https://github.com/leelang7/LexPulse"},
-          {"@type": "ListItem", "position": 5, "name": "WageGuard — 임금체불 위험 예측 AI", "url": "https://github.com/leelang7/WageGuard"},
-          {"@type": "ListItem", "position": 6, "name": "LoL Butler — 실시간 게임 트래커", "url": "https://lolbutler.allthatai.kr"},
-          {"@type": "ListItem", "position": 7, "name": "Ditto — 우리 동네 1km 익명 인연(미니룸·AI 떠보기·결맞음)", "url": "https://ditto.allthatai.kr"}
+          {"@type": "ListItem", "position": 2, "name": "AllThatToon — AI 웹툰·웹소설 창작 올인원", "url": "https://toon.allthatai.kr"},
+          {"@type": "ListItem", "position": 3, "name": "AllThatLink — 유휴 GPU 분산 학습 중개 플랫폼", "url": "https://link.allthatai.kr"},
+          {"@type": "ListItem", "position": 4, "name": "AllThatHz — AI 음악 채널", "url": "https://www.youtube.com/@allthathz"},
+          {"@type": "ListItem", "position": 5, "name": "AuraView — K-Perception 자율주행 보조", "url": "https://auraview.allthatai.kr/ui"},
+          {"@type": "ListItem", "position": 6, "name": "MetroEyes — 실시간 지하철 혼잡도 BEV", "url": "https://leelang7.github.io/MetroEyes/"},
+          {"@type": "ListItem", "position": 7, "name": "LexPulse — 공정위 의결서 RAG", "url": "https://github.com/leelang7/LexPulse"},
+          {"@type": "ListItem", "position": 8, "name": "WageGuard — 임금체불 위험 예측 AI", "url": "https://github.com/leelang7/WageGuard"},
+          {"@type": "ListItem", "position": 9, "name": "LoL Butler — 실시간 게임 트래커", "url": "https://lolbutler.allthatai.kr"},
+          {"@type": "ListItem", "position": 10, "name": "Ditto — 우리 동네 1km 익명 인연(미니룸·AI 떠보기·결맞음)", "url": "https://ditto.allthatai.kr"}
         ]
       }
     ]
@@ -138,11 +141,8 @@
       font-family:'Black Han Sans', sans-serif; font-size:22px; letter-spacing:0.5px;
     }
     .logo .mark {
-      width:36px; height:36px; border-radius:10px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      display:flex; align-items:center; justify-content:center;
-      color:#080c14; font-size:14px; font-weight:900; box-shadow: var(--glow);
-      font-family:'JetBrains Mono', monospace;
+      width:40px; height:40px; border-radius:11px;
+      display:block; object-fit:cover; box-shadow: var(--glow);
     }
     .logo em { color:var(--accent); font-style:normal; }
     nav { display:flex; gap:22px; font-family:'JetBrains Mono', monospace; font-size:12px; }
@@ -198,6 +198,9 @@
     }
     .card .tag.soon { background:var(--warn); }
     .card .tag.beta { background:var(--safe); }
+    .card-logo { width:60px; height:60px; border-radius:15px; display:block; margin-bottom:14px;
+                 box-shadow:0 6px 20px rgba(0,0,0,0.5); }
+    .card.flagship .card-logo { width:64px; height:64px; }
     .card h3 { font-size:24px; font-weight:900; margin-bottom:6px; letter-spacing:-0.3px; }
     .card .sub { font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--accent); letter-spacing:1.5px; margin-bottom:12px; }
     .card p { color:var(--muted); font-size:14px; flex-grow:1; line-height:1.7; }
@@ -287,7 +290,7 @@
   <div class="wrap">
     <header>
       <div class="logo">
-        <div class="mark">A</div>
+        <img class="mark" src="/logos/allthatai.png" alt="AllThatAI" width="40" height="40"/>
         <div><em>All</em>ThatAI</div>
       </div>
       <nav>
@@ -302,16 +305,18 @@
       <div class="eyebrow">PORTFOLIO · 2026</div>
       <h1>데모 말고,<br><em>돌아가는 제품.</em></h1>
       <p class="lede">
-        48개 AI 도구 허브 <strong style="color:var(--accent);">AllThatAI Real</strong>,
-        자율주행 협업 인지 <strong style="color:var(--accent);">AuraView</strong>,
-        실시간 지하철 혼잡도 <strong style="color:var(--accent);">MetroEyes</strong>,
-        공정위 의결서 RAG <strong style="color:var(--accent);">LexPulse</strong> —
+        <strong style="color:var(--accent);">올댓(AllThat) 시리즈</strong> —
+        생활 사기검증 허브 <strong style="color:var(--accent);">Real</strong>,
+        AI 웹툰 스튜디오 <strong style="color:var(--accent);">Toon</strong>,
+        분산 GPU 학습 중개 <strong style="color:var(--accent);">Link</strong>,
+        AI 음악 <strong style="color:var(--accent);">Hz</strong>,
+        자율주행 협업 인지 <strong style="color:var(--accent);">AuraView</strong> —
         그리고 출간 도서 <strong style="color:var(--accent);">“테슬라처럼 만드는 비전 자율주행과 피지컬 AI”</strong>.
         <em style="font-style:normal;color:var(--accent);">Tesla 도 못 하는, 한국에서만 가능한 AI.</em>
       </p>
       <div class="tagline">
         <span class="pulse"></span>
-        <span>포트폴리오 가동 중 · 48 AI tools · 6 projects · 1 published book</span>
+        <span>올댓 시리즈 가동 중 · 48 AI tools · 10 projects · 1 published book</span>
       </div>
     </section>
 
@@ -351,6 +356,7 @@
       <a class="card flagship" href="https://allthatai-real.vercel.app/" target="_blank" rel="noopener"
          onmousemove="this.style.setProperty('--mx', event.offsetX + 'px')">
         <span class="tag beta">AI 사기 검증 · 48 TOOLS</span>
+        <img class="card-logo" src="/logos/allthatreal.png" alt="AllThatAI Real" width="64" height="64" loading="lazy"/>
         <div class="sub">// AI SCAM-CHECK & LIFE-ADMIN</div>
         <h3>AllThatAI Real</h3>
         <p>
@@ -370,6 +376,87 @@
           <span class="arrow">→ OPEN</span>
         </div>
       </a>
+
+      <!-- AllThatToon -->
+      <a class="card" href="https://toon.allthatai.kr" target="_blank" rel="noopener"
+         onmousemove="this.style.setProperty('--mx', event.offsetX + 'px')">
+        <span class="tag beta">BETA</span>
+        <img class="card-logo" src="/logos/allthattoon.png" alt="AllThatToon" width="60" height="60" loading="lazy"/>
+        <div class="sub">// AI WEBTOON STUDIO</div>
+        <h3>AllThatToon</h3>
+        <p>
+          웹툰과 웹소설을 <strong style="color:var(--accent);">장르 발굴 → AI 집필 → 컷 생성 → 발행 → 수익화</strong>까지
+          한 앱에서. 로컬 SD로 컷을 그리는 작가 스튜디오와 독자 플랫폼을 합친 AI 창작 올인원.
+        </p>
+        <div class="badges">
+          <span class="badge hot">AI 집필</span>
+          <span class="badge hot">로컬 SD 컷생성</span>
+          <span class="badge">웹툰 + 웹소설</span>
+          <span class="badge">발행·수익화</span>
+        </div>
+        <div class="cta">
+          <span class="url">toon.allthatai.kr</span>
+          <span class="arrow">→ OPEN</span>
+        </div>
+      </a>
+
+      <!-- AllThatLink -->
+      <a class="card" href="https://link.allthatai.kr" target="_blank" rel="noopener"
+         onmousemove="this.style.setProperty('--mx', event.offsetX + 'px')">
+        <span class="tag beta">BETA</span>
+        <img class="card-logo" src="/logos/allthatlink.png" alt="AllThatLink" width="60" height="60" loading="lazy"/>
+        <div class="sub">// DISTRIBUTED GPU TRAINING</div>
+        <h3>AllThatLink</h3>
+        <p>
+          <strong style="color:var(--accent);">남는 그래픽카드가 포인트가 된다.</strong>
+          유휴 PC의 GPU를 등록한 제공자와, 모델 학습이 필요한 이용자를 잇는 분산 학습 중개 플랫폼.
+          Coordinator·Worker·Client 구조 + 포인트 경제.
+        </p>
+        <div class="badges">
+          <span class="badge hot">분산 컴퓨트</span>
+          <span class="badge hot">GPU 마켓</span>
+          <span class="badge">포인트 경제</span>
+          <span class="badge">THINK·CONNECT·ELEVATE</span>
+        </div>
+        <div class="cta">
+          <span class="url">link.allthatai.kr</span>
+          <span class="arrow">→ OPEN</span>
+        </div>
+      </a>
+
+      <!-- AllThatHz -->
+      <a class="card" href="https://www.youtube.com/@allthathz" target="_blank" rel="noopener"
+         onmousemove="this.style.setProperty('--mx', event.offsetX + 'px')">
+        <span class="tag beta">LIVE</span>
+        <img class="card-logo" src="/logos/allthathz.png" alt="AllThatHz" width="60" height="60" loading="lazy"/>
+        <div class="sub">// AI MUSIC CHANNEL</div>
+        <h3>AllThatHz</h3>
+        <p>
+          AI로 만드는 <strong style="color:var(--accent);">감성 음악 채널</strong>.
+          무드별 트랙을 꾸준히 발행하는 AllThatAI의 사운드 브랜치 — 운동·집중·휴식까지 장면별 오리지널.
+        </p>
+        <div class="badges">
+          <span class="badge hot">AI 음악</span>
+          <span class="badge">무드별 트랙</span>
+          <span class="badge">YouTube</span>
+        </div>
+        <div class="cta">
+          <span class="url">youtube · @allthathz</span>
+          <span class="arrow">→ OPEN</span>
+        </div>
+      </a>
+
+      <!-- AllThatExit (준비 중) -->
+      <div class="card placeholder">
+        <span class="tag soon">SOON</span>
+        <div class="sub">// MOBILE APP</div>
+        <h3>AllThatExit</h3>
+        <p>올댓 시리즈의 새 모바일 앱. 곧 공개됩니다.</p>
+        <div class="cta">
+          <span class="url">allthatexit</span>
+          <span class="arrow">준비 중</span>
+        </div>
+      </div>
 
       <!-- AuraView -->
       <a class="card" href="https://auraview.allthatai.kr/ui" target="_blank" rel="noopener"
