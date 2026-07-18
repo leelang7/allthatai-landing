@@ -168,6 +168,18 @@
       box-shadow:0 0 8px var(--safe); animation:pulse 2s ease-in-out infinite;
     }
     @keyframes pulse { 0%,100% {opacity:1; transform:scale(1);} 50% {opacity:.4; transform:scale(.7);} }
+    /* ── SUITE STRIP (제품 로고 라인업) ── */
+    .suite { display:flex; flex-wrap:wrap; gap:14px; margin-top:34px; }
+    .suite a {
+      display:flex; align-items:center; gap:11px; text-decoration:none;
+      padding:9px 15px 9px 9px; border:1px solid var(--border); border-radius:14px;
+      background:var(--surface); transition:transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .suite a:hover { transform:translateY(-3px); border-color:var(--border2); background:var(--surface2); }
+    .suite img { width:38px; height:38px; border-radius:10px; display:block; }
+    .suite .nm { display:flex; flex-direction:column; line-height:1.2; }
+    .suite .nm b { font-size:14px; color:var(--text); font-weight:800; letter-spacing:-0.2px; }
+    .suite .nm small { font-family:'JetBrains Mono',monospace; font-size:9.5px; color:var(--muted); letter-spacing:0.5px; }
     /* ── SECTION ── */
     .section-head { margin:56px 0 24px; display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:16px; }
     .section-head h2 { font-family:'Black Han Sans', sans-serif; font-size:28px; letter-spacing:-0.3px; }
@@ -201,6 +213,13 @@
     .card-logo { width:60px; height:60px; border-radius:15px; display:block; margin-bottom:14px;
                  box-shadow:0 6px 20px rgba(0,0,0,0.5); }
     .card.flagship .card-logo { width:64px; height:64px; }
+    /* 카드 상단 배너 썸네일 */
+    .card-thumb { display:block; width:calc(100% + 52px); height:150px; object-fit:cover;
+                  margin:-26px -26px 18px; border-bottom:1px solid var(--border);
+                  filter:saturate(1.05); transition:transform .3s ease; }
+    .card:hover .card-thumb { transform:scale(1.04); }
+    .card.flagship .card-thumb { height:190px; }
+    .card { overflow:hidden; }
     .card h3 { font-size:24px; font-weight:900; margin-bottom:6px; letter-spacing:-0.3px; }
     .card .sub { font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--accent); letter-spacing:1.5px; margin-bottom:12px; }
     .card p { color:var(--muted); font-size:14px; flex-grow:1; line-height:1.7; }
@@ -302,8 +321,8 @@
     </header>
 
     <section class="hero">
-      <div class="eyebrow">PORTFOLIO · 2026</div>
-      <h1>데모 말고,<br><em>돌아가는 제품.</em></h1>
+      <div class="eyebrow">ALLTHAT SERIES · AI PRODUCT SUITE</div>
+      <h1>생활·창작·컴퓨트,<br><em>전부 올댓.</em></h1>
       <p class="lede">
         <strong style="color:var(--accent);">올댓(AllThat) 시리즈</strong> —
         생활 사기검증 허브 <strong style="color:var(--accent);">Real</strong>,
@@ -317,6 +336,24 @@
       <div class="tagline">
         <span class="pulse"></span>
         <span>올댓 시리즈 가동 중 · 48 AI tools · 10 projects · 1 published book</span>
+      </div>
+      <div class="suite">
+        <a href="https://allthatai-real.vercel.app/" target="_blank" rel="noopener">
+          <img src="/logos/allthatreal.png" alt="Real" width="38" height="38"/>
+          <span class="nm"><b>Real</b><small>SCAM-CHECK</small></span>
+        </a>
+        <a href="https://toon.allthatai.kr" target="_blank" rel="noopener">
+          <img src="/logos/allthattoon.png" alt="Toon" width="38" height="38"/>
+          <span class="nm"><b>Toon</b><small>AI WEBTOON</small></span>
+        </a>
+        <a href="https://link.allthatai.kr" target="_blank" rel="noopener">
+          <img src="/logos/allthatlink.png" alt="Link" width="38" height="38"/>
+          <span class="nm"><b>Link</b><small>GPU TRAINING</small></span>
+        </a>
+        <a href="https://www.youtube.com/@allthathz" target="_blank" rel="noopener">
+          <img src="/logos/allthathz.png" alt="Hz" width="38" height="38"/>
+          <span class="nm"><b>Hz</b><small>AI MUSIC</small></span>
+        </a>
       </div>
     </section>
 
@@ -356,7 +393,7 @@
       <a class="card flagship" href="https://allthatai-real.vercel.app/" target="_blank" rel="noopener"
          onmousemove="this.style.setProperty('--mx', event.offsetX + 'px')">
         <span class="tag beta">AI 사기 검증 · 48 TOOLS</span>
-        <img class="card-logo" src="/logos/allthatreal.png" alt="AllThatAI Real" width="64" height="64" loading="lazy"/>
+        <img class="card-thumb" src="/thumbs/allthatreal.png" alt="AllThatAI Real" width="720" height="384" loading="lazy"/>
         <div class="sub">// AI SCAM-CHECK & LIFE-ADMIN</div>
         <h3>AllThatAI Real</h3>
         <p>
@@ -381,7 +418,7 @@
       <a class="card" href="https://toon.allthatai.kr" target="_blank" rel="noopener"
          onmousemove="this.style.setProperty('--mx', event.offsetX + 'px')">
         <span class="tag beta">BETA</span>
-        <img class="card-logo" src="/logos/allthattoon.png" alt="AllThatToon" width="60" height="60" loading="lazy"/>
+        <img class="card-thumb" src="/thumbs/allthattoon.png" alt="AllThatToon" width="720" height="384" loading="lazy"/>
         <div class="sub">// AI WEBTOON STUDIO</div>
         <h3>AllThatToon</h3>
         <p>
@@ -404,7 +441,7 @@
       <a class="card" href="https://link.allthatai.kr" target="_blank" rel="noopener"
          onmousemove="this.style.setProperty('--mx', event.offsetX + 'px')">
         <span class="tag beta">BETA</span>
-        <img class="card-logo" src="/logos/allthatlink.png" alt="AllThatLink" width="60" height="60" loading="lazy"/>
+        <img class="card-thumb" src="/thumbs/allthatlink.png" alt="AllThatLink" width="720" height="384" loading="lazy"/>
         <div class="sub">// DISTRIBUTED GPU TRAINING</div>
         <h3>AllThatLink</h3>
         <p>
@@ -428,7 +465,7 @@
       <a class="card" href="https://www.youtube.com/@allthathz" target="_blank" rel="noopener"
          onmousemove="this.style.setProperty('--mx', event.offsetX + 'px')">
         <span class="tag beta">LIVE</span>
-        <img class="card-logo" src="/logos/allthathz.png" alt="AllThatHz" width="60" height="60" loading="lazy"/>
+        <img class="card-thumb" src="/thumbs/allthathz.png" alt="AllThatHz" width="720" height="384" loading="lazy"/>
         <div class="sub">// AI MUSIC CHANNEL</div>
         <h3>AllThatHz</h3>
         <p>
@@ -446,17 +483,70 @@
         </div>
       </a>
 
-      <!-- AllThatExit (준비 중) -->
-      <div class="card placeholder">
-        <span class="tag soon">SOON</span>
-        <div class="sub">// MOBILE APP</div>
+      <!-- AllThatExit -->
+      <div class="card" style="cursor:default;">
+        <img class="card-thumb" src="/thumbs/allthatexit.png" alt="AllThatExit" width="720" height="384" loading="lazy"/>
+        <span class="tag soon">APP · SOON</span>
+        <div class="sub">// AI ESCAPE ROOM</div>
         <h3>AllThatExit</h3>
-        <p>올댓 시리즈의 새 모바일 앱. 곧 공개됩니다.</p>
+        <p>
+          AI가 만드는 <strong style="color:var(--accent);">방탈출</strong>.
+          방과 단서, 퍼즐을 풀어 탈출하는 모바일 게임 — 올댓 시리즈의 게임 브랜치.
+        </p>
+        <div class="badges">
+          <span class="badge hot">AI 방탈출</span>
+          <span class="badge">모바일 앱</span>
+          <span class="badge">Cordova</span>
+        </div>
         <div class="cta">
-          <span class="url">allthatexit</span>
-          <span class="arrow">준비 중</span>
+          <span class="url">allthatexit · mobile</span>
+          <span class="arrow">출시 예정</span>
         </div>
       </div>
+
+      <!-- Ditto -->
+      <a class="card" href="https://ditto.allthatai.kr" target="_blank" rel="noopener"
+         onmousemove="this.style.setProperty('--mx', event.offsetX + 'px')">
+        <span class="tag beta">LIVE</span>
+        <div class="sub">// HYPERLOCAL ANONYMOUS DATING</div>
+        <h3>Ditto</h3>
+        <p>
+          우리 동네 1km 익명 인연. 싸이월드 감성 미니룸 + <strong style="color:var(--accent);">AI 떠보기·결맞음</strong>으로
+          외모 스와이프 말고 행동·취향으로 통하는 사람을 발굴. 온디바이스 행동 지문 RAG가 핵심 해자.
+        </p>
+        <div class="badges">
+          <span class="badge">React Native · Web</span>
+          <span class="badge">NestJS</span>
+          <span class="badge hot">RAG·LLM</span>
+          <span class="badge">1km Geo</span>
+        </div>
+        <div class="cta">
+          <span class="url">ditto.allthatai.kr</span>
+          <span class="arrow">→ OPEN</span>
+        </div>
+      </a>
+
+      <!-- LoL Butler -->
+      <a class="card" href="https://lolbutler.allthatai.kr" target="_blank" rel="noopener"
+         onmousemove="this.style.setProperty('--mx', event.offsetX + 'px')">
+        <span class="tag beta">LIVE</span>
+        <div class="sub">// REAL-TIME GAME ASSISTANT</div>
+        <h3>LoL Butler</h3>
+        <p>
+          메모할 필요 없는 적팀 스펠 쿨타임 트래커. 폰 하나로 팀원과 자동 공유.
+          리그 오브 레전드 인게임 데이터를 실시간 감지해 클래시·랭크 게이머의 승률을 끌어올리는 툴.
+        </p>
+        <div class="badges">
+          <span class="badge">Node.js</span>
+          <span class="badge">Express</span>
+          <span class="badge hot">Real-time</span>
+          <span class="badge">Mobile</span>
+        </div>
+        <div class="cta">
+          <span class="url">lolbutler.allthatai.kr</span>
+          <span class="arrow">→ OPEN</span>
+        </div>
+      </a>
 
       <!-- AuraView -->
       <a class="card" href="https://auraview.allthatai.kr/ui" target="_blank" rel="noopener"
@@ -483,50 +573,6 @@
         <div class="cta">
           <span class="url">auraview.allthatai.kr</span>
           <span class="arrow">→ /ui · /pwa · /slides · /kiosk</span>
-        </div>
-      </a>
-
-      <!-- LoL Butler -->
-      <a class="card" href="https://lolbutler.allthatai.kr" target="_blank" rel="noopener"
-         onmousemove="this.style.setProperty('--mx', event.offsetX + 'px')">
-        <span class="tag beta">LIVE</span>
-        <div class="sub">// REAL-TIME GAME ASSISTANT</div>
-        <h3>LoL Butler</h3>
-        <p>
-          메모할 필요 없는 적팀 스펠 쿨타임 트래커. 폰 하나로 팀원과 자동 공유.
-          리그 오브 레전드 인게임 데이터를 실시간 감지해 클래시·랭크 게이머의 승률을 끌어올리는 툴.
-        </p>
-        <div class="badges">
-          <span class="badge">Node.js</span>
-          <span class="badge">Express</span>
-          <span class="badge hot">Real-time</span>
-          <span class="badge">Mobile</span>
-        </div>
-        <div class="cta">
-          <span class="url">lolbutler.allthatai.kr</span>
-          <span class="arrow">→ OPEN</span>
-        </div>
-      </a>
-
-      <!-- Ditto -->
-      <a class="card" href="https://ditto.allthatai.kr" target="_blank" rel="noopener"
-         onmousemove="this.style.setProperty('--mx', event.offsetX + 'px')">
-        <span class="tag beta">LIVE</span>
-        <div class="sub">// HYPERLOCAL ANONYMOUS DATING</div>
-        <h3>Ditto</h3>
-        <p>
-          우리 동네 1km 익명 인연. 싸이월드 감성 미니룸 + <strong style="color:var(--accent);">AI 떠보기·결맞음</strong>으로
-          외모 스와이프 말고 행동·취향으로 통하는 사람을 발굴. 온디바이스 행동 지문 RAG가 핵심 해자.
-        </p>
-        <div class="badges">
-          <span class="badge">React Native · Web</span>
-          <span class="badge">NestJS</span>
-          <span class="badge hot">RAG·LLM</span>
-          <span class="badge">1km Geo</span>
-        </div>
-        <div class="cta">
-          <span class="url">ditto.allthatai.kr</span>
-          <span class="arrow">→ OPEN</span>
         </div>
       </a>
 
