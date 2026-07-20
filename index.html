@@ -98,7 +98,8 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"/>
   <style>
     :root {
       --bg:#080c14; --surface:#0d1520; --surface2:#121d2e; --surface3:#172035;
@@ -112,7 +113,8 @@
     html, body { height:100%; }
     body {
       background:var(--bg); color:var(--text);
-      font-family:'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
       min-height:100vh; overflow-x:hidden; line-height:1.55;
     }
     body::before {
@@ -138,7 +140,7 @@
     header { display:flex; align-items:center; justify-content:space-between; margin-bottom:72px; }
     .logo {
       display:flex; align-items:center; gap:12px;
-      font-family:'Black Han Sans', sans-serif; font-size:22px; letter-spacing:0.5px;
+      font-family:'Pretendard', sans-serif; font-weight:800; font-size:22px; letter-spacing:0.5px;
     }
     .logo .mark {
       width:40px; height:40px; border-radius:11px;
@@ -161,10 +163,13 @@
       color:var(--accent); text-transform:uppercase; margin-bottom:18px; opacity:0.85;
     }
     h1 {
-      font-family:'Black Han Sans', sans-serif;
-      font-size:clamp(44px, 7vw, 76px); line-height:1.08; letter-spacing:-1px; margin-bottom:22px;
+      font-family:'Pretendard', sans-serif; font-weight:800;
+      font-weight:900; font-size:clamp(46px, 7.6vw, 84px); line-height:1.04; letter-spacing:-0.035em; margin-bottom:22px;
     }
-    h1 em { font-style:normal; background: linear-gradient(135deg, var(--accent) 20%, var(--accent2) 80%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; text-shadow:none; }
+    h1 em { font-style:normal; font-weight:900;
+            background: linear-gradient(120deg, var(--accent) 0%, #55d3ff 35%, var(--accent2) 100%);
+            -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; text-shadow:none;
+            filter: drop-shadow(0 0 26px rgba(0,200,255,0.28)); }
     .lede { font-size:17px; color:var(--muted); max-width:620px; line-height:1.75; }
     .tagline { display:inline-flex; align-items:center; gap:10px; margin-top:22px;
                padding:9px 16px; border:1px solid var(--border2); border-radius:999px;
@@ -188,7 +193,7 @@
     .suite .nm small { font-family:'JetBrains Mono',monospace; font-size:9.5px; color:var(--muted); letter-spacing:0.5px; }
     /* ── SECTION ── */
     .section-head { margin:56px 0 24px; display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .section-head h2 { font-family:'Black Han Sans', sans-serif; font-size:28px; letter-spacing:-0.3px; }
+    .section-head h2 { font-family:'Pretendard', sans-serif; font-weight:800; font-size:28px; letter-spacing:-0.3px; }
     .section-head .meta { font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--muted); letter-spacing:2px; text-transform:uppercase; }
     /* ── CARD GRID ── */
     .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:22px; }
@@ -253,7 +258,7 @@
       gap:16px; margin:56px 0;
       padding:26px 28px; background:var(--surface); border:1px solid var(--border); border-radius:18px;
     }
-    .stat .n { font-family:'Black Han Sans', sans-serif; font-size:36px; letter-spacing:-0.5px; }
+    .stat .n { font-family:'Pretendard', sans-serif; font-weight:800; font-size:36px; letter-spacing:-0.5px; }
     .stat .n em { font-style:normal; color:var(--accent); }
     .stat .l { font-family:'JetBrains Mono', monospace; font-size:10px; color:var(--muted); letter-spacing:2px; text-transform:uppercase; margin-top:2px; }
     /* ── FOOTER ── */
@@ -277,7 +282,7 @@
                     box-shadow:0 16px 44px rgba(0,0,0,0.6); transition:transform .25s ease; }
     .fb-cover:hover img { transform:translateY(-4px) scale(1.012); }
     .fb-body { position:relative; z-index:1; }
-    .fb-title { font-family:'Black Han Sans',sans-serif; font-size:clamp(26px,3.4vw,40px);
+    .fb-title { font-family:'Pretendard',sans-serif; font-weight:800; letter-spacing:-0.03em; font-size:clamp(26px,3.4vw,40px);
                 line-height:1.12; margin:10px 0; }
     .fb-title em { font-style:normal; background:linear-gradient(135deg,var(--accent),var(--accent2));
                    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
