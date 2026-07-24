@@ -305,13 +305,17 @@
                    border:none; font-weight:700; box-shadow:var(--glow); }
     .btn.primary:hover { color:#080c14; }
     .btn.ghost { color:var(--muted); }
-    .fb-vol2 { margin-top:22px; padding-top:18px; border-top:1px dashed var(--border2);
-               display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+    .fb-vol2 { margin-top:24px; padding-top:20px; border-top:1px dashed var(--border2);
+               display:flex; gap:18px; align-items:flex-start; }
+    .fb-vol2 .v2cover { flex:0 0 78px; display:block; line-height:0; border-radius:6px; overflow:hidden;
+               box-shadow:0 8px 20px rgba(0,0,0,.4); }
+    .fb-vol2 .v2cover img { width:78px; height:auto; display:block; }
+    .fb-vol2 .v2info { display:flex; flex-direction:column; align-items:flex-start; gap:9px; }
     .fb-vol2 .v2tag { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:2px;
                       color:var(--accent); border:1px solid var(--border2); border-radius:6px; padding:5px 9px; }
     .fb-vol2 .v2main b { font-size:16px; color:var(--text); font-weight:700; }
     .fb-vol2 .v2main span { font-size:13px; color:var(--muted); }
-    .fb-vol2 .v2note { width:100%; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted); }
+    .fb-vol2 .v2note { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted); }
     /* ── FLAGSHIP CARD (full-width) ── */
     .card.flagship { grid-column:1 / -1; min-height:auto; }
     .card.flagship h3 { font-size:28px; }
@@ -397,18 +401,22 @@
         </ul>
         <div class="fb-price"><strong style="color:var(--text);font-size:15px;letter-spacing:0;">종이책 · 전자책</strong> <span>2종 출간 · 220p</span></div>
         <div class="fb-cta">
-          <a class="btn primary" href="https://search.kyobobook.co.kr/search?keyword=9791112190567" target="_blank" rel="noopener">교보문고 (종이책) →</a>
-          <a class="btn primary" href="https://www.yes24.com/product/search?query=9791112190567" target="_blank" rel="noopener">예스24 (종이책) →</a>
+          <a class="btn primary" href="https://product.kyobobook.co.kr/detail/S000220109072" target="_blank" rel="noopener">교보문고 (종이책) →</a>
           <a class="btn primary" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=393241466" target="_blank" rel="noopener">알라딘 (종이책) →</a>
           <a class="btn ghost" href="https://bookk.co.kr/bookStore/69eb15e3ee2f092c79a5fc74" target="_blank" rel="noopener">부크크</a>
           <a class="btn ghost" href="https://allthatai.upaper.kr/content/1214406" target="_blank" rel="noopener">유페이퍼 (전자책)</a>
           <a class="btn ghost" href="https://github.com/leelang7/physical-ai-book" target="_blank" rel="noopener">실습 코드 ↗</a>
         </div>
         <div class="fb-vol2">
-          <span class="v2tag">ALL THAT AI · VOL.02</span>
-          <div class="v2main"><b>우리집 AI 의사·수의사·헬스코치</b> <span>— 이석창 지음</span></div>
-          <a class="btn" href="https://bookk.co.kr/bookStore/6a5f2bd0a3e9f498c0dbcfe9" target="_blank" rel="noopener">부크크 →</a>
-          <small class="v2note">주요 서점 유통 준비 중 · 현재 부크크</small>
+          <a class="v2cover" href="https://bookk.co.kr/bookStore/6a5f2bd0a3e9f498c0dbcfe9" target="_blank" rel="noopener">
+            <img src="/book-cover-v2.jpg" width="717" height="1012" loading="lazy" alt="우리집 AI 의사·수의사·헬스코치 — 이석창 지음, All That AI Vol.02"/>
+          </a>
+          <div class="v2info">
+            <span class="v2tag">ALL THAT AI · VOL.02 · 신간</span>
+            <div class="v2main"><b>우리집 AI 의사·수의사·헬스코치</b> <span>— 이석창 지음</span></div>
+            <div class="v2cta"><a class="btn" href="https://bookk.co.kr/bookStore/6a5f2bd0a3e9f498c0dbcfe9" target="_blank" rel="noopener">부크크 (종이책·전자책) →</a></div>
+            <small class="v2note">주요 서점 유통 준비 중 · 현재 부크크</small>
+          </div>
         </div>
       </div>
     </section>
