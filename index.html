@@ -66,11 +66,29 @@
         "name": "테슬라처럼 만드는 비전 자율주행과 피지컬 AI",
         "author": {"@id": "https://allthatai.kr/#person"},
         "inLanguage": "ko",
-        "bookFormat": "https://schema.org/EBook",
-        "numberOfPages": 220,
+        "bookFormat": "https://schema.org/Paperback",
+        "numberOfPages": 840,
         "image": "https://allthatai.kr/book-cover.png",
-        "url": "https://bookk.co.kr/bookStore/69eb15e3ee2f092c79a5fc74",
-        "offers": {"@type": "Offer", "price": "14900", "priceCurrency": "KRW", "availability": "https://schema.org/InStock", "url": "https://bookk.co.kr/bookStore/69eb15e3ee2f092c79a5fc74"}
+        "url": "https://product.kyobobook.co.kr/detail/S000220109072",
+        "offers": [
+          {"@type": "Offer", "name": "종이책", "price": "28000", "priceCurrency": "KRW", "availability": "https://schema.org/InStock", "url": "https://product.kyobobook.co.kr/detail/S000220109072"},
+          {"@type": "Offer", "name": "전자책", "price": "19900", "priceCurrency": "KRW", "availability": "https://schema.org/InStock", "url": "https://www.yes24.com/product/goods/188825042"}
+        ]
+      },
+      {
+        "@type": "Book",
+        "@id": "https://allthatai.kr/#book-vol02",
+        "name": "우리집 AI 의사·수의사·헬스코치",
+        "author": {"@id": "https://allthatai.kr/#person"},
+        "inLanguage": "ko",
+        "bookFormat": "https://schema.org/Paperback",
+        "numberOfPages": 1300,
+        "image": "https://allthatai.kr/book-cover-v2.jpg",
+        "url": "https://product.kyobobook.co.kr/detail/S000220782083",
+        "offers": [
+          {"@type": "Offer", "name": "종이책", "price": "43400", "priceCurrency": "KRW", "availability": "https://schema.org/InStock", "url": "https://product.kyobobook.co.kr/detail/S000220782083"},
+          {"@type": "Offer", "name": "전자책", "price": "19900", "priceCurrency": "KRW", "availability": "https://schema.org/InStock", "url": "https://www.yes24.com/product/goods/195217292"}
+        ]
       },
       {
         "@type": "WebApplication",
@@ -302,7 +320,12 @@
     .fb-price s { color:var(--muted); margin-right:8px; }
     .fb-price strong { color:var(--safe); font-size:23px; letter-spacing:-0.5px; }
     .fb-price span { color:var(--warn); font-size:11px; margin-left:8px; letter-spacing:1px; }
-    .fb-cta { display:flex; flex-wrap:wrap; gap:10px; }
+    .fb-cta { display:flex; flex-direction:column; align-items:flex-start; gap:9px; }
+    /* 구매 링크는 종이책 / 전자책 로 줄을 나누고, 각 줄은 주요 서점(교보·알라딘·예스24) 순서로 */
+    .buyrow { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+    .buyrow .fmt { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:1.5px;
+                   color:var(--muted); min-width:50px; }
+    .btn.sm { font-size:12px; padding:8px 13px; border-radius:8px; }
     .btn { font-family:'JetBrains Mono',monospace; font-size:13px; padding:11px 18px; border-radius:10px;
            text-decoration:none; border:1px solid var(--border2); color:var(--text); transition:all .2s; }
     .btn:hover { border-color:var(--accent); color:var(--accent); transform:translateY(-2px); }
@@ -390,7 +413,7 @@
 
     <!-- ── FEATURED 저서 ── -->
     <section class="featured-book" id="book">
-      <a class="fb-cover" href="https://bookk.co.kr/bookStore/69eb15e3ee2f092c79a5fc74" target="_blank" rel="noopener">
+      <a class="fb-cover" href="https://product.kyobobook.co.kr/detail/S000220109072" target="_blank" rel="noopener">
         <img src="/book-cover.png" width="700" height="1050" loading="eager"
              alt="테슬라처럼 만드는 비전 자율주행과 피지컬 AI — 이석창 지음, All That AI Vol.01"/>
       </a>
@@ -406,21 +429,46 @@
         </ul>
         <div class="fb-price"><strong style="color:var(--text);font-size:15px;letter-spacing:0;">종이책 · 전자책</strong> <span>2종 출간 · 220p</span></div>
         <div class="fb-cta">
-          <a class="btn primary" href="https://product.kyobobook.co.kr/detail/S000220109072" target="_blank" rel="noopener">교보문고 (종이책) →</a>
-          <a class="btn primary" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=393241466" target="_blank" rel="noopener">알라딘 (종이책) →</a>
-          <a class="btn ghost" href="https://bookk.co.kr/bookStore/69eb15e3ee2f092c79a5fc74" target="_blank" rel="noopener">부크크</a>
-          <a class="btn ghost" href="https://allthatai.upaper.kr/content/1214406" target="_blank" rel="noopener">유페이퍼 (전자책)</a>
-          <a class="btn ghost" href="https://github.com/leelang7/physical-ai-book" target="_blank" rel="noopener">실습 코드 ↗</a>
+          <div class="buyrow">
+            <span class="fmt">종이책</span>
+            <a class="btn primary" href="https://product.kyobobook.co.kr/detail/S000220109072" target="_blank" rel="noopener">교보문고 →</a>
+            <a class="btn primary" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=393241466" target="_blank" rel="noopener">알라딘 →</a>
+            <a class="btn primary" href="https://www.yes24.com/product/goods/189439522" target="_blank" rel="noopener">예스24 →</a>
+          </div>
+          <div class="buyrow">
+            <span class="fmt">전자책</span>
+            <a class="btn sm" href="https://www.yes24.com/product/goods/188825042" target="_blank" rel="noopener">예스24 →</a>
+            <a class="btn sm" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=393283355" target="_blank" rel="noopener">알라딘 →</a>
+            <a class="btn sm ghost" href="https://allthatai.upaper.kr/content/1214406" target="_blank" rel="noopener">유페이퍼</a>
+            <a class="btn sm ghost" href="https://bookk.co.kr/bookStore/69eb15e3ee2f092c79a5fc74" target="_blank" rel="noopener">부크크</a>
+          </div>
+          <div class="buyrow">
+            <span class="fmt">코드</span>
+            <a class="btn sm ghost" href="https://github.com/leelang7/physical-ai-book" target="_blank" rel="noopener">실습 코드 ↗</a>
+          </div>
         </div>
         <div class="fb-vol2">
-          <a class="v2cover" href="https://bookk.co.kr/bookStore/6a5f2bd0a3e9f498c0dbcfe9" target="_blank" rel="noopener">
+          <a class="v2cover" href="https://product.kyobobook.co.kr/detail/S000220782083" target="_blank" rel="noopener">
             <img src="/book-cover-v2.jpg" width="717" height="1012" loading="lazy" alt="우리집 AI 의사·수의사·헬스코치 — 이석창 지음, All That AI Vol.02"/>
           </a>
           <div class="v2info">
             <span class="v2tag">ALL THAT AI · VOL.02 · 신간</span>
             <div class="v2main"><b>우리집 AI 의사·수의사·헬스코치</b> <span>— 이석창 지음</span></div>
-            <div class="v2cta"><a class="btn" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399482021" target="_blank" rel="noopener">알라딘 (종이책) →</a> <a class="btn" href="https://www.yes24.com/product/goods/194522439" target="_blank" rel="noopener">예스24 (종이책) →</a> <a class="btn" href="https://bookk.co.kr/bookStore/6a5f2c2fdb03192a16a9fd5b" target="_blank" rel="noopener">부크크 (전자책) →</a> <a class="btn" href="https://bookk.co.kr/bookStore/6a5f2bd0a3e9f498c0dbcfe9" target="_blank" rel="noopener">부크크 (종이책)</a></div>
-            <small class="v2note">종이책 · 전자책 2종 — 알라딘·예스24·부크크 유통 중</small>
+            <div class="v2cta fb-cta">
+              <div class="buyrow">
+                <span class="fmt">종이책</span>
+                <a class="btn sm" href="https://product.kyobobook.co.kr/detail/S000220782083" target="_blank" rel="noopener">교보문고 →</a>
+                <a class="btn sm" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399482021" target="_blank" rel="noopener">알라딘 →</a>
+                <a class="btn sm" href="https://www.yes24.com/product/goods/194522439" target="_blank" rel="noopener">예스24 →</a>
+              </div>
+              <div class="buyrow">
+                <span class="fmt">전자책</span>
+                <a class="btn sm" href="https://www.yes24.com/product/goods/195217292" target="_blank" rel="noopener">예스24 →</a>
+                <a class="btn sm" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=400883042" target="_blank" rel="noopener">알라딘 →</a>
+                <a class="btn sm ghost" href="https://bookk.co.kr/bookStore/6a5f2c2fdb03192a16a9fd5b" target="_blank" rel="noopener">부크크</a>
+              </div>
+            </div>
+            <small class="v2note">교보문고·알라딘·예스24 유통 — 종이책 43,400원 · 전자책 19,900원</small>
           </div>
         </div>
       </div>
