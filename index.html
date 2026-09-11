@@ -308,67 +308,62 @@
                   font-family:'Pretendard',sans-serif; font-size:11.5px; line-height:1.95; color:var(--muted); opacity:0.85; }
     footer .biz b { color:#7d97b4; font-weight:600; }
     /* ── FEATURED BOOK ── */
-    .featured-book {
-      display:grid; grid-template-columns:260px 1fr; gap:40px; align-items:center;
-      margin:0 0 44px; padding:34px; border:1px solid var(--border2); border-radius:22px;
-      background:linear-gradient(135deg, rgba(255,59,59,0.06), var(--surface) 58%);
-      box-shadow:var(--shadow); position:relative; overflow:hidden;
-    }
-    .featured-book::after {
-      content:''; position:absolute; top:-40%; right:-10%; width:340px; height:340px;
-      background:radial-gradient(circle, rgba(0,200,255,0.10), transparent 70%); pointer-events:none;
-    }
-    .fb-cover { display:block; position:relative; z-index:1; }
-    .fb-cover img { width:100%; height:auto; border-radius:10px; display:block;
-                    box-shadow:0 16px 44px rgba(0,0,0,0.6); transition:transform .25s ease; }
-    .fb-cover:hover img { transform:translateY(-4px) scale(1.012); }
-    .fb-body { position:relative; z-index:1; }
-    .fb-title { font-family:'Pretendard',sans-serif; font-weight:800; letter-spacing:-0.03em; font-size:clamp(26px,3.4vw,40px);
-                line-height:1.12; margin:10px 0; }
-    .fb-title em { font-style:normal; background:linear-gradient(135deg,var(--accent),var(--accent2));
-                   -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
-    .fb-sub { color:var(--muted); font-size:15px; margin-bottom:16px; line-height:1.6; }
-    .fb-points { list-style:none; display:flex; flex-direction:column; gap:7px; margin-bottom:18px; }
-    .fb-points li { color:var(--text); font-size:13.5px; padding-left:20px; position:relative; line-height:1.5; }
-    .fb-points li::before { content:'▹'; position:absolute; left:0; color:var(--accent); }
-    .fb-price { font-family:'JetBrains Mono',monospace; margin-bottom:18px; font-size:14px; }
-    .fb-price s { color:var(--muted); margin-right:8px; }
-    .fb-price strong { color:var(--safe); font-size:23px; letter-spacing:-0.5px; }
-    .fb-price span { color:var(--warn); font-size:11px; margin-left:8px; letter-spacing:1px; }
-    .fb-cta { display:flex; flex-direction:column; align-items:flex-start; gap:9px; }
-    /* 구매 링크는 종이책 / 전자책 로 줄을 나누고, 각 줄은 주요 서점(교보·알라딘·예스24) 순서로 */
-    .buyrow { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
-    .buyrow .fmt { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:1.5px;
-                   color:var(--muted); min-width:50px; }
-    .btn.sm { font-size:12px; padding:8px 13px; border-radius:8px; }
     .btn { font-family:'JetBrains Mono',monospace; font-size:13px; padding:11px 18px; border-radius:10px;
            text-decoration:none; border:1px solid var(--border2); color:var(--text); transition:all .2s; }
     .btn:hover { border-color:var(--accent); color:var(--accent); transform:translateY(-2px); }
+    .btn.sm { font-size:12px; padding:8px 13px; border-radius:8px; }
     .btn.primary { background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#080c14;
                    border:none; font-weight:700; box-shadow:var(--glow); }
     .btn.primary:hover { color:#080c14; }
     .btn.ghost { color:var(--muted); }
-    .fb-vol2, .fb-vol3 { margin-top:24px; padding-top:20px; border-top:1px dashed var(--border2);
-               display:flex; gap:18px; align-items:flex-start; }
-    .fb-vol2 .v2cover, .fb-vol3 .v2cover { flex:0 0 78px; display:block; line-height:0; border-radius:6px; overflow:hidden;
-               box-shadow:0 8px 20px rgba(0,0,0,.4); }
-    .fb-vol2 .v2cover img, .fb-vol3 .v2cover img { width:78px; height:auto; display:block; }
-    .fb-vol2 .v2info, .fb-vol3 .v2info { display:flex; flex-direction:column; align-items:flex-start; gap:9px; }
-    .fb-vol2 .v2tag, .fb-vol3 .v2tag { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:2px;
-                      color:var(--accent); border:1px solid var(--border2); border-radius:6px; padding:5px 9px; }
-    .fb-vol2 .v2main b, .fb-vol3 .v2main b { font-size:16px; color:var(--text); font-weight:700; }
-    .fb-vol2 .v2main span, .fb-vol3 .v2main span { font-size:13px; color:var(--muted); }
-    .fb-vol2 .v2note, .fb-vol3 .v2note { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted); }
+    .buyrow { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+    .buyrow .fmt { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:1.5px;
+                   color:var(--muted); min-width:50px; }
+
+    /* ── 저서 3권을 나란히 ──
+       예전에는 Vol.01 을 크게 펼치고 그 본문 안에 Vol.02·03 을 세로로 덧붙였다.
+       새 책일수록 아래로 밀려 내려가 눈에 안 띄었고, 양옆 여백은 비어 있었다.
+       세 권은 같은 시리즈다. 같은 크기로 나란히 둔다. */
+    .books3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+              margin:0 0 44px; align-items:stretch; }
+    .bookcard { display:flex; flex-direction:column; gap:13px; padding:26px 24px 24px;
+                border:1px solid var(--border2); border-radius:20px; background:var(--surface);
+                box-shadow:var(--shadow); position:relative; overflow:hidden; }
+    .bookcard.is-new { background:linear-gradient(135deg, rgba(255,59,59,0.07), var(--surface) 60%); }
+    .bc-cover { display:block; line-height:0; border-radius:10px; overflow:hidden;
+                box-shadow:0 10px 26px rgba(0,0,0,.45); }
+    .bc-cover img { width:100%; height:auto; display:block; }
+    .bc-vol { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:3px;
+              color:var(--accent); text-transform:uppercase; }
+    .bc-title { font-family:'Pretendard',sans-serif; font-weight:800; letter-spacing:-0.02em;
+                font-size:20px; line-height:1.26; }
+    .bc-sub { color:var(--muted); font-size:13.5px; line-height:1.6; }
+    .bc-points { list-style:none; display:flex; flex-direction:column; gap:6px;
+                 font-size:12.5px; color:var(--muted); line-height:1.55; }
+    .bc-points li { padding-left:11px; position:relative; }
+    .bc-points li::before { content:'·'; position:absolute; left:0; color:var(--accent); }
+    /* CTA 는 카드 바닥에 붙인다. 본문 길이가 달라도 구매 버튼 줄이 나란히 선다. */
+    .bc-cta { display:flex; flex-direction:column; align-items:flex-start; gap:10px; margin-top:auto; }
+    /* 카드 폭이 좁아 '종이책 [교보문고][알라딘][예스24]' 가 한 줄에 안 들어간다.
+       그대로 두면 라벨 없는 버튼이 다음 줄에 홀로 떨어져 무슨 판형인지 알 수 없다.
+       라벨이 한 줄을 차지하게 해서 버튼은 그 아래에서만 감기게 한다. */
+    .bc-cta .buyrow { gap:6px; }
+    .bc-cta .buyrow .fmt { flex:0 0 100%; margin-bottom:1px; }
+    .bookcard .btn { padding:7px 11px; font-size:12px; }
+    .bc-note { font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--muted); line-height:1.5; }
     /* ── FLAGSHIP CARD (full-width) ── */
     .card.flagship { grid-column:1 / -1; min-height:auto; }
     .card.flagship h3 { font-size:28px; }
+    /* 2열로 두면 세 권 중 하나가 둘째 줄에 홀로 떨어진다 — 고치려던 그 모양이다.
+       좁아질 때까지 셋을 나란히 두고, 더 좁아지면 한 줄로 쌓는다. */
+    @media (max-width:860px) { .books3 { grid-template-columns:1fr; } }
     @media (max-width:640px) {
       .wrap { padding:40px 20px 60px; }
       header { margin-bottom:48px; }
       nav { display:none; }
       .card { min-height:240px; padding:22px; }
-      .featured-book { grid-template-columns:1fr; gap:22px; padding:24px; }
-      .fb-cover { max-width:200px; }
+      .books3 { grid-template-columns:1fr; }
+      .bc-cover { max-width:210px; }
     }
   </style>
 </head>
@@ -402,7 +397,7 @@
       </p>
       <div class="tagline">
         <span class="pulse"></span>
-        <span>올댓 시리즈 가동 중 · 48 AI tools · 10 projects · 1 published book</span>
+        <span>올댓 시리즈 가동 중 · 48 AI tools · 10 projects · 3 published books</span>
       </div>
       <div class="suite">
         <a href="https://toon.allthatai.kr" target="_blank" rel="noopener">
@@ -426,29 +421,29 @@
       <img class="hero-logo" src="/logos/allthatai-hero.jpg" alt="All That AI" width="420" height="420" loading="eager"/>
     </section>
 
-    <!-- ── FEATURED 저서 ── -->
-    <section class="featured-book" id="book">
-      <a class="fb-cover" href="https://product.kyobobook.co.kr/detail/S000220109072" target="_blank" rel="noopener">
-        <img src="/book-cover.png" width="700" height="1050" loading="eager"
-             alt="테슬라처럼 만드는 비전 자율주행과 피지컬 AI — 이석창 지음, All That AI Vol.01"/>
-      </a>
-      <div class="fb-body">
-        <div class="eyebrow">FEATURED · 출간 도서 · ALL THAT AI VOL.01</div>
-        <h2 class="fb-title">테슬라처럼 만드는<br><em>비전 자율주행과 피지컬 AI</em></h2>
-        <p class="fb-sub">카메라 한 대에서 Optimus 까지, 픽셀이 핸들이 되는 여정. — 이석창(Seokchang Lee) 지음</p>
-        <ul class="fb-points">
-          <li>Vision-only · End-to-End — “픽셀이 핸들이 되는” FSD v12 관점으로 자율주행을 풀어냄</li>
+    <!-- ── 저서 3권 ── -->
+    <section class="books3" id="book">
+
+      <article class="bookcard">
+        <a class="bc-cover" href="https://product.kyobobook.co.kr/detail/S000220109072" target="_blank" rel="noopener">
+          <img src="/book-cover.png" width="700" height="1050" loading="eager"
+               alt="테슬라처럼 만드는 비전 자율주행과 피지컬 AI — 이석창 지음, All That AI Vol.01"/>
+        </a>
+        <div class="bc-vol">All That AI · Vol.01</div>
+        <h3 class="bc-title">테슬라처럼 만드는<br>비전 자율주행과 피지컬 AI</h3>
+        <p class="bc-sub">카메라 한 대에서 Optimus 까지, 픽셀이 핸들이 되는 여정</p>
+        <ul class="bc-points">
+          <li>Vision-only · End-to-End — FSD v12 관점으로 자율주행을 풀어냄</li>
           <li>자율주행을 넘어 <strong style="color:var(--accent);">Physical AI</strong> — Optimus · Isaac Lab · VLA · World Model</li>
-          <li>모방학습 주력(BC → HG-DAgger) · 저자의 2026 <em style="font-style:normal;color:var(--accent);">See-ParkingNet</em> 논문 기반</li>
-          <li>8부 30장 + 부록 4 · 220p · 장별 실습 코드·QR 동반(공식 GitHub 저장소)</li>
+          <li>모방학습 주력(BC → HG-DAgger) · 저자의 2026 See-ParkingNet 논문 기반</li>
+          <li>8부 30장 + 부록 4 · 220p · 장별 실습 코드·QR 동반</li>
         </ul>
-        <div class="fb-price"><strong style="color:var(--text);font-size:15px;letter-spacing:0;">종이책 · 전자책</strong> <span>2종 출간 · 220p</span></div>
-        <div class="fb-cta">
+        <div class="bc-cta">
           <div class="buyrow">
             <span class="fmt">종이책</span>
-            <a class="btn primary" href="https://product.kyobobook.co.kr/detail/S000220109072" target="_blank" rel="noopener">교보문고 →</a>
-            <a class="btn primary" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=393241466" target="_blank" rel="noopener">알라딘 →</a>
-            <a class="btn primary" href="https://www.yes24.com/product/goods/189439522" target="_blank" rel="noopener">예스24 →</a>
+            <a class="btn sm" href="https://product.kyobobook.co.kr/detail/S000220109072" target="_blank" rel="noopener">교보문고 →</a>
+            <a class="btn sm" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=393241466" target="_blank" rel="noopener">알라딘 →</a>
+            <a class="btn sm" href="https://www.yes24.com/product/goods/189439522" target="_blank" rel="noopener">예스24 →</a>
           </div>
           <div class="buyrow">
             <span class="fmt">전자책</span>
@@ -461,53 +456,66 @@
             <span class="fmt">코드</span>
             <a class="btn sm ghost" href="https://github.com/leelang7/physical-ai-book" target="_blank" rel="noopener">실습 코드 ↗</a>
           </div>
+          <small class="bc-note">종이책 · 전자책 2종 출간 · 220p</small>
         </div>
-        <div class="fb-vol2">
-          <a class="v2cover" href="https://product.kyobobook.co.kr/detail/S000220782083" target="_blank" rel="noopener">
-            <img src="/book-cover-v2.jpg" width="717" height="1012" loading="lazy" alt="우리집 AI 의사·수의사·헬스코치 — 이석창 지음, All That AI Vol.02"/>
-          </a>
-          <div class="v2info">
-            <span class="v2tag">ALL THAT AI · VOL.02 · 신간</span>
-            <div class="v2main"><b>우리집 AI 의사·수의사·헬스코치</b> <span>— 이석창 지음</span></div>
-            <div class="v2cta fb-cta">
-              <div class="buyrow">
-                <span class="fmt">종이책</span>
-                <a class="btn sm" href="https://product.kyobobook.co.kr/detail/S000220782083" target="_blank" rel="noopener">교보문고 →</a>
-                <a class="btn sm" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399482021" target="_blank" rel="noopener">알라딘 →</a>
-                <a class="btn sm" href="https://www.yes24.com/product/goods/194522439" target="_blank" rel="noopener">예스24 →</a>
-              </div>
-              <div class="buyrow">
-                <span class="fmt">전자책</span>
-                <a class="btn sm" href="https://www.yes24.com/product/goods/195217292" target="_blank" rel="noopener">예스24 →</a>
-                <a class="btn sm" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=400883042" target="_blank" rel="noopener">알라딘 →</a>
-                <a class="btn sm ghost" href="https://bookk.co.kr/bookStore/6a5f2c2fdb03192a16a9fd5b" target="_blank" rel="noopener">부크크</a>
-              </div>
-            </div>
-            <small class="v2note">교보문고·알라딘·예스24 유통 — 종이책 43,400원 · 전자책 19,900원</small>
+      </article>
+
+      <article class="bookcard">
+        <a class="bc-cover" href="https://product.kyobobook.co.kr/detail/S000220782083" target="_blank" rel="noopener">
+          <img src="/book-cover-v2.jpg" width="717" height="1012" loading="lazy"
+               alt="우리집 AI 의사·수의사·헬스코치 — 이석창 지음, All That AI Vol.02"/>
+        </a>
+        <div class="bc-vol">All That AI · Vol.02</div>
+        <h3 class="bc-title">우리집 AI<br>의사 · 수의사 · 헬스코치</h3>
+        <p class="bc-sub">병원 가기 전과 후, 집에서 묻고 판단하는 법</p>
+        <ul class="bc-points">
+          <li>증상 · 검사 결과 · 처방을 AI에게 묻는 실제 대화 설계</li>
+          <li>반려동물 · 건강관리까지 — 생활 밀착형 AI 활용서</li>
+          <li>교보문고 · 알라딘 · 예스24 유통</li>
+        </ul>
+        <div class="bc-cta">
+          <div class="buyrow">
+            <span class="fmt">종이책</span>
+            <a class="btn sm" href="https://product.kyobobook.co.kr/detail/S000220782083" target="_blank" rel="noopener">교보문고 →</a>
+            <a class="btn sm" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399482021" target="_blank" rel="noopener">알라딘 →</a>
+            <a class="btn sm" href="https://www.yes24.com/product/goods/194522439" target="_blank" rel="noopener">예스24 →</a>
           </div>
-        </div>
-        <div class="fb-vol3">
-          <a class="v2cover" href="https://bookk.co.kr/bookStore/6aa11cf94b709dfd0a812330" target="_blank" rel="noopener">
-            <img src="/book-cover-v3.jpg" width="717" height="1012" loading="lazy" alt="AI 휴먼 해부학 — 이석창 지음, All That AI Vol.03"/>
-          </a>
-          <div class="v2info">
-            <span class="v2tag">ALL THAT AI · VOL.03 · 출간</span>
-            <div class="v2main"><b>AI 휴먼 해부학</b> <span>— 이석창 지음</span></div>
-            <div class="v2main"><span>얼굴·목소리·두뇌·기억, 네 층을 조립하고 실측하는 법</span></div>
-            <div class="v2cta fb-cta">
-              <div class="buyrow">
-                <span class="fmt">종이책</span>
-                <a class="btn sm" href="https://bookk.co.kr/bookStore/6aa11cf94b709dfd0a812330" target="_blank" rel="noopener">부크크 →</a>
-              </div>
-              <div class="buyrow">
-                <span class="fmt">컴패니언 코드</span>
-                <a class="btn sm ghost" href="https://github.com/leelang7/talking-ai-human-book" target="_blank" rel="noopener">GitHub</a>
-              </div>
-            </div>
-            <small class="v2note">33개 장 · 회귀 675건 · 검증 도구 15종 — 교보문고·예스24·알라딘 유통 준비 중</small>
+          <div class="buyrow">
+            <span class="fmt">전자책</span>
+            <a class="btn sm" href="https://www.yes24.com/product/goods/195217292" target="_blank" rel="noopener">예스24 →</a>
+            <a class="btn sm" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=400883042" target="_blank" rel="noopener">알라딘 →</a>
+            <a class="btn sm ghost" href="https://bookk.co.kr/bookStore/6a5f2c2fdb03192a16a9fd5b" target="_blank" rel="noopener">부크크</a>
           </div>
+          <small class="bc-note">종이책 43,400원 · 전자책 19,900원</small>
         </div>
-      </div>
+      </article>
+
+      <article class="bookcard is-new">
+        <a class="bc-cover" href="https://bookk.co.kr/bookStore/6aa11cf94b709dfd0a812330" target="_blank" rel="noopener">
+          <img src="/book-cover-v3.jpg" width="717" height="1012" loading="lazy"
+               alt="AI 휴먼 해부학 — 이석창 지음, All That AI Vol.03"/>
+        </a>
+        <div class="bc-vol">All That AI · Vol.03 · 신간</div>
+        <h3 class="bc-title">AI 휴먼 해부학</h3>
+        <p class="bc-sub">얼굴 · 목소리 · 두뇌 · 기억, 네 층을 조립하고 실측하는 법</p>
+        <ul class="bc-points">
+          <li>사진 한 장에서 실시간 대화 아바타까지 — 픽셀이 사람이 되는 여정</li>
+          <li>33개 장 · 회귀 675건 · 검증 도구 15종</li>
+          <li>본문의 모든 수치를 되짚는 컴패니언 저장소 공개</li>
+        </ul>
+        <div class="bc-cta">
+          <div class="buyrow">
+            <span class="fmt">종이책</span>
+            <a class="btn sm" href="https://bookk.co.kr/bookStore/6aa11cf94b709dfd0a812330" target="_blank" rel="noopener">부크크 →</a>
+          </div>
+          <div class="buyrow">
+            <span class="fmt">코드</span>
+            <a class="btn sm ghost" href="https://github.com/leelang7/talking-ai-human-book" target="_blank" rel="noopener">컴패니언 코드 ↗</a>
+          </div>
+          <small class="bc-note">교보문고 · 예스24 · 알라딘 유통 준비 중</small>
+        </div>
+      </article>
+
     </section>
 
     <div class="section-head" id="projects">
