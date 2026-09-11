@@ -99,7 +99,11 @@
         "inLanguage": "ko",
         "bookFormat": "https://schema.org/Paperback",
         "datePublished": "2026-09-11",
-        "url": "https://github.com/leelang7/talking-ai-human-book"
+        "image": "https://allthatai.kr/book-cover-v3.jpg",
+        "url": "https://bookk.co.kr/bookStore/6aa11cf94b709dfd0a812330",
+        "offers": [
+          {"@type": "Offer", "name": "종이책", "availability": "https://schema.org/InStock", "url": "https://bookk.co.kr/bookStore/6aa11cf94b709dfd0a812330"}
+        ]
       },
       {
         "@type": "WebApplication",
@@ -346,9 +350,9 @@
     .btn.ghost { color:var(--muted); }
     .fb-vol2, .fb-vol3 { margin-top:24px; padding-top:20px; border-top:1px dashed var(--border2);
                display:flex; gap:18px; align-items:flex-start; }
-    .fb-vol2 .v2cover { flex:0 0 78px; display:block; line-height:0; border-radius:6px; overflow:hidden;
+    .fb-vol2 .v2cover, .fb-vol3 .v2cover { flex:0 0 78px; display:block; line-height:0; border-radius:6px; overflow:hidden;
                box-shadow:0 8px 20px rgba(0,0,0,.4); }
-    .fb-vol2 .v2cover img { width:78px; height:auto; display:block; }
+    .fb-vol2 .v2cover img, .fb-vol3 .v2cover img { width:78px; height:auto; display:block; }
     .fb-vol2 .v2info, .fb-vol3 .v2info { display:flex; flex-direction:column; align-items:flex-start; gap:9px; }
     .fb-vol2 .v2tag, .fb-vol3 .v2tag { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:2px;
                       color:var(--accent); border:1px solid var(--border2); border-radius:6px; padding:5px 9px; }
@@ -483,17 +487,24 @@
           </div>
         </div>
         <div class="fb-vol3">
+          <a class="v2cover" href="https://bookk.co.kr/bookStore/6aa11cf94b709dfd0a812330" target="_blank" rel="noopener">
+            <img src="/book-cover-v3.jpg" width="717" height="1012" loading="lazy" alt="AI 휴먼 해부학 — 이석창 지음, All That AI Vol.03"/>
+          </a>
           <div class="v2info">
             <span class="v2tag">ALL THAT AI · VOL.03 · 출간</span>
             <div class="v2main"><b>AI 휴먼 해부학</b> <span>— 이석창 지음</span></div>
             <div class="v2main"><span>얼굴·목소리·두뇌·기억, 네 층을 조립하고 실측하는 법</span></div>
             <div class="v2cta fb-cta">
               <div class="buyrow">
+                <span class="fmt">종이책</span>
+                <a class="btn sm" href="https://bookk.co.kr/bookStore/6aa11cf94b709dfd0a812330" target="_blank" rel="noopener">부크크 →</a>
+              </div>
+              <div class="buyrow">
                 <span class="fmt">컴패니언 코드</span>
-                <a class="btn sm" href="https://github.com/leelang7/talking-ai-human-book" target="_blank" rel="noopener">GitHub →</a>
+                <a class="btn sm ghost" href="https://github.com/leelang7/talking-ai-human-book" target="_blank" rel="noopener">GitHub</a>
               </div>
             </div>
-            <small class="v2note">부크크 출간 · 33개 장 · 회귀 675건 · 검증 도구 15종 — 교보문고·예스24·알라딘 유통 준비 중</small>
+            <small class="v2note">33개 장 · 회귀 675건 · 검증 도구 15종 — 교보문고·예스24·알라딘 유통 준비 중</small>
           </div>
         </div>
       </div>
