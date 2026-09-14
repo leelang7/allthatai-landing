@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "kr.allthatai.keyprobe",
+      "sha256_cert_fingerprints": [
+        "83:A7:ED:4B:4D:6F:7D:A0:4F:20:8D:4B:33:C7:83:F7:7F:46:A8:BD:56:A4:FD:55:CE:31:D8:15:91:2C:7B:C4",
+        "0E:B0:67:83:88:FD:F6:28:83:32:6E:3F:7F:D4:44:BC:3B:F8:6B:F0:43:1F:CB:39:06:82:F9:3A:BB:8B:DC:76"
+      ]
+    }
+  }
+]
