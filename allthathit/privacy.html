@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AllThatHit 개인정보처리방침</title>
+<meta name="robots" content="index,follow">
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; font: 16px/1.7 -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+         background: #fff; color: #1a1a1a; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 1.7rem; margin: 0 0 4px; }
+  h2 { font-size: 1.2rem; margin-top: 2.2em; padding-top: .6em; border-top: 1px solid #e5e5e5; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; display: block; overflow-x: auto; }
+  th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #f6f6f6; }
+  hr { border: 0; border-top: 1px solid #e5e5e5; margin: 2em 0; }
+  code { background: #f2f2f2; padding: 1px 4px; border-radius: 3px; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e6e6e6; }
+    h2, hr { border-color: #2a2d33; }
+    th { background: #1a1d22; } th, td { border-color: #2a2d33; }
+    code { background: #1a1d22; }
+  }
+</style>
+</head>
+<body><main>
+<h1>AllThatHit 개인정보처리방침</h1>
+<p>최종 수정: 2026년 9월 25일</p>
+<p>AllThatHit(이하 "이 앱")은 스마트워치로 쭈꾸미·갑오징어 조과를 세고 기록하는 앱입니다.
+이 문서는 이 앱이 <strong>무엇을 다루고, 무엇을 다루지 않는지</strong>를 적은 것입니다.</p>
+<hr />
+<h2>1. 이 앱이 받지 않는 것</h2>
+<ul>
+<li><strong>이름, 이메일, 전화번호, 생년월일</strong> — 받지 않습니다. 이 앱에는 회원가입이 없습니다.</li>
+<li><strong>광고 식별자, 기기 식별자</strong> — 쓰지 않습니다. 이 앱에는 광고도 분석 도구도 없습니다.</li>
+<li><strong>녹음 파일</strong> — 이 앱은 소리를 저장하거나 보내지 않습니다. 말로 세기는 워치의 음성 입력이 문자로 바꾼 결과만 받습니다.</li>
+</ul>
+<h2>2. 워치 안에만 저장하는 것</h2>
+<p>아래는 <strong>사용자의 워치 안에만</strong> 있습니다. 앱을 지우면 함께 사라지고, 메뉴의 "전부 지우기"로도 지울 수 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th>무엇</th>
+<th>왜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>마릿수와 그 시각, 종류(쭈꾸미·갑오징어)</td>
+<td>조과 기록</td>
+</tr>
+<tr>
+<td>마릿수를 센 자리의 위치</td>
+<td>"내 포인트" — 어디서 잘 잡혔는지 보여 드리기 위해</td>
+</tr>
+<tr>
+<td>손목의 움직임(가속도·자이로)</td>
+<td>출조 자동 감지, 챔질 확인, 사용자에게 맞춘 학습</td>
+</tr>
+<tr>
+<td>학습된 동작 모델</td>
+<td>위와 같음</td>
+</tr>
+<tr>
+<td>말로 남긴 메모</td>
+<td>기록</td>
+</tr>
+<tr>
+<td>배터리 잔량</td>
+<td>이 앱이 배터리를 얼마나 쓰는지 보여 드리기 위해</td>
+</tr>
+</tbody>
+</table>
+<p>위치는 설정에서 정밀도를 낮추거나(약 100m) 끌 수 있습니다.</p>
+<h2>3. 워치 밖으로 나가는 것</h2>
+<h3>3-1. 질문과 코칭 (말로 묻거나 코칭이 켜져 있을 때)</h3>
+<p>"오늘 몇 물이야", "바람 세져?"처럼 말로 물으면 아래가 이 앱의 서버로 갑니다.</p>
+<ul>
+<li>말한 문장(문자)</li>
+<li>오늘의 기록 요약(마릿수, 시간, 시간당 등 숫자)</li>
+<li><strong>약 1km로 뭉갠 위치</strong> — 그 자리의 날씨와 물때를 찾는 데만 쓰고 저장하지 않습니다</li>
+</ul>
+<p>서버는 이것으로 답을 만들기 위해 <strong>Anthropic(Claude)</strong> 에 문장과 요약을 보내고,
+날씨를 위해 <strong>Open-Meteo</strong> 에 뭉갠 위치를 보냅니다. 이 앱의 서버는 문장과 위치를 저장하지 않습니다.
+Anthropic 의 데이터 처리는 Anthropic 의 방침을 따릅니다.</p>
+<h3>3-2. 순위 (참여를 켰을 때만)</h3>
+<p>순위는 <strong>기본으로 꺼져 있습니다.</strong> 켜면 출조가 끝날 때마다 아래가 서버에 저장됩니다.</p>
+<ul>
+<li>무작위로 만든 번호와 별명 (이름·연락처와 연결되지 않습니다)</li>
+<li>날짜, 마릿수, 출조 시간, 검증 점수(동작 센서가 챔질을 확인한 비율)</li>
+<li><strong>1km 단위 구역 번호</strong>와 구역별 마릿수 — 정확한 좌표는 보내지 않습니다</li>
+</ul>
+<p>다른 사람에게 보이는 것은 별명과 순위, 그리고 <strong>이틀이 지나고 세 명 이상 다녀간 구역</strong>의 합계뿐입니다.</p>
+<p><strong>참여를 끄면 그동안 올린 출조를 서버에서 모두 지우고</strong> 번호를 버립니다.</p>
+<h2>4. 음성 인식</h2>
+<p>말로 세기와 묻기는 워치에 들어 있는 음성 입력 기능(구글)을 씁니다.
+소리는 그 기능이 처리하고, 이 앱은 문자로 바뀐 결과만 받습니다.</p>
+<h2>5. 권한</h2>
+<table>
+<thead>
+<tr>
+<th>권한</th>
+<th>쓰는 곳</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>위치</td>
+<td>마릿수를 센 자리 기록, 날씨·물때</td>
+</tr>
+<tr>
+<td>마이크</td>
+<td>말로 세기, 말로 묻기</td>
+</tr>
+<tr>
+<td>알림</td>
+<td>출조 중 표시, 기록 알림</td>
+</tr>
+<tr>
+<td>센서(가속도·자이로)</td>
+<td>출조 자동 감지, 챔질 확인</td>
+</tr>
+</tbody>
+</table>
+<h2>6. 아이들</h2>
+<p>이 앱은 만 14세 미만을 대상으로 하지 않습니다.</p>
+<h2>7. 바뀌면</h2>
+<p>이 문서가 바뀌면 이 페이지의 날짜를 고칩니다.</p>
+<h2>8. 문의</h2>
+<p>leescvsir@gmail.com</p>
+</main></body>
+</html>
