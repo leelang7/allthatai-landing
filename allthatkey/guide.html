@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AllThatKey 사용 설명서</title>
+<meta name="description" content="AllThatKey 설치, 처음 설정, 워치 사용법, 말로 할 수 있는 것, 트렁크 뒤에 서면 열기, 알림, 구매, 문제 해결.">
+<meta name="robots" content="index,follow">
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; font: 16px/1.7 -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+         background: #fff; color: #1a1a1a; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 1.7rem; margin: 0 0 4px; }
+  h2 { font-size: 1.25rem; margin-top: 2.2em; padding-top: .6em; border-top: 1px solid #e5e5e5; }
+  h3 { font-size: 1.05rem; margin-top: 1.6em; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; display: block; overflow-x: auto; }
+  th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #f6f6f6; white-space: nowrap; }
+  code { background: #f2f2f2; padding: 1px 5px; border-radius: 3px; }
+  .toc { background: #f6f6f6; padding: 14px 18px; border-radius: 8px; }
+  .toc ol { margin: 6px 0 0; padding-left: 1.3em; }
+  .step { margin: 12px 0; padding: 12px 16px; border-left: 3px solid #4a7cff; background: #f7f9ff; }
+  .step b { display: block; margin-bottom: 2px; }
+  .note { padding: 10px 14px; border-radius: 6px; background: #fff6e0; }
+  .say { color: #1f5fbf; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e6e6e6; }
+    h2 { border-color: #2a2d33; }
+    th { background: #1a1d22; } th, td { border-color: #2a2d33; }
+    code, .toc { background: #1a1d22; }
+    .step { background: #151a26; border-color: #6d95ff; }
+    .note { background: #2a2416; }
+    .say { color: #8db2ff; }
+  }
+</style>
+</head>
+<body><main>
+<h1>AllThatKey 사용 설명서</h1>
+<p>최종 수정: 2026년 9월 27일 · <a href="/allthatkey/privacy.html">개인정보처리방침</a> · 문의 <a href="mailto:leescvsir@gmail.com">leescvsir@gmail.com</a></p>
+
+<div class="toc">
+<strong>차례</strong>
+<ol>
+<li><a href="#what">이 앱이 하는 일</a></li>
+<li><a href="#need">필요한 것</a></li>
+<li><a href="#install">설치</a></li>
+<li><a href="#setup">처음 설정 (폰 앱, 5단계)</a></li>
+<li><a href="#watch">워치 사용법</a></li>
+<li><a href="#say">말로 할 수 있는 것</a></li>
+<li><a href="#rear">트렁크 뒤에 서면 열기</a></li>
+<li><a href="#alerts">먼저 알려 주는 것</a></li>
+<li><a href="#buy">무료와 유료</a></li>
+<li><a href="#safety">안전 원칙</a></li>
+<li><a href="#trouble">문제 해결</a></li>
+<li><a href="#cars">지원 차량</a></li>
+</ol>
+</div>
+
+<h2 id="what">1. 이 앱이 하는 일</h2>
+<p>Wear OS 워치를 테슬라 열쇠로 씁니다. 차 옆에서는 워치와 차가 블루투스로 직접 통신해서 폰도 인터넷도 필요 없습니다. 차에서 멀리 있을 때는 폰을 거쳐 차 상태를 보고 공조·충전·잠금을 제어합니다. 정해진 명령어 대신 보통 말로 시킬 수 있습니다.</p>
+
+<h2 id="need">2. 필요한 것</h2>
+<ul>
+<li>Wear OS 4 이상 워치 (갤럭시 워치 4 이후, 픽셀 워치 등)</li>
+<li>안드로이드 12 이상 폰 (워치와 연결된 폰)</li>
+<li>테슬라 계정과 지원 차량 (<a href="#cars">12. 지원 차량</a>)</li>
+<li>워치 키 등록 때 차 안에서 키카드 한 장</li>
+</ul>
+
+<h2 id="install">3. 설치</h2>
+<div class="step"><b>폰</b>Google Play에서 <code>AllThatKey</code>를 검색해 설치합니다.</div>
+<div class="step"><b>워치</b>워치의 Play 스토어에서 <code>AllThatKey</code>를 검색해 설치합니다. 폰의 Play 스토어에서 앱 페이지를 열고 "워치에 설치"를 눌러도 됩니다.</div>
+<p>두 앱이 모두 있어야 합니다. 폰 앱은 설정과 원격 중계만 하고, 차를 다루는 건 워치 앱입니다.</p>
+
+<h2 id="setup">4. 처음 설정 (폰 앱, 5단계)</h2>
+<p>폰 앱을 열면 아래 순서가 카드로 나옵니다. 끝난 것은 초록 ✓, 안 된 것은 노랑 ✗로 표시되고, 필요한 버튼이 그 카드에 있습니다.</p>
+<div class="step"><b>1. 테슬라 계정</b>"테슬라 로그인"을 누르면 테슬라 사이트가 열립니다. 로그인하면 앱으로 돌아옵니다. 비밀번호는 테슬라만 봅니다.</div>
+<div class="step"><b>2. 차</b>"내 차 목록 보기"를 누르고 워치 열쇠로 쓸 차를 하나 고릅니다. 지원하지 않는 차는 이유와 함께 회색으로 나옵니다.</div>
+<div class="step"><b>3. 원격 기능 허용</b>"테슬라에서 허용하기"를 누르면 테슬라 페이지가 열립니다. 차를 고르고 허용을 누른 뒤 앱으로 돌아오세요. 이걸 해야 멀리서 차를 다룰 수 있습니다. 차 옆에서 블루투스로 여닫는 데는 필요 없습니다.</div>
+<div class="step"><b>4. 워치</b>워치에 앱이 설치되고 폰과 연결돼 있으면 ✓가 됩니다. 고른 차는 자동으로 워치에 전달됩니다.</div>
+<div class="step"><b>5. 차 안에서 키 등록</b>차에 타서 워치 앱을 열고 "키 등록"을 누릅니다. 차 화면에 "새 키 추가" 확인이 뜨면 키카드를 콘솔(컵홀더 앞)에 댑니다. 차 화면에서 확인을 누르면 끝입니다. 차마다 한 번만 합니다.</div>
+<div class="note">키 등록이 끝나면 워치만으로 문을 열고 잠급니다. 폰을 두고 나와도, 지하 주차장이어도 됩니다.</div>
+
+<h2 id="watch">5. 워치 사용법</h2>
+<h3>화면</h3>
+<ul>
+<li><strong>차 그림</strong>: 부위를 누르면 그대로 됩니다. 문(열기·잠금), 프렁크, 트렁크, 충전구, 공조 ON/OFF.</li>
+<li><strong>맨 위 줄</strong>: 배터리 %와 남은 거리. 그 아래 줄에 마지막 실행 결과가 나옵니다.</li>
+<li><strong>말하기 버튼</strong>: 누르고 말합니다. 워치가 녹음하고 폰이 문장으로 바꿉니다.</li>
+<li><strong>아래로 스크롤</strong>: 메뉴. 자주 쓰는 명령이 버튼으로 있고, 각 버튼 아래에 같은 뜻의 말 예시가 있습니다.</li>
+</ul>
+<h3>타일</h3>
+<p>워치 페이스에서 옆으로 넘기면 나오는 타일에 AllThatKey를 추가하면 앱을 열지 않고 잠금·열기·트렁크를 바로 누를 수 있습니다. (워치 페이스 길게 누르기 → 타일 추가)</p>
+<h3>차 옆과 멀리서</h3>
+<table>
+<thead><tr><th></th><th>차 옆 (블루투스)</th><th>멀리서 (폰 경유)</th></tr></thead>
+<tbody>
+<tr><td>문 열기·잠금</td><td>됨</td><td>잠금만 됨. 멀리서 문 열기는 없습니다</td></tr>
+<tr><td>트렁크·프렁크·충전구 열기</td><td>됨 (Key Pro)</td><td>안 됨. 닫기는 됨</td></tr>
+<tr><td>공조, 충전, 센트리, 상태 보기</td><td>됨</td><td>됨 (원격 제어)</td></tr>
+<tr><td>필요한 것</td><td>워치만</td><td>폰이 켜져 있고 인터넷에 연결돼 있어야 함</td></tr>
+</tbody>
+</table>
+
+<h2 id="say">6. 말로 할 수 있는 것</h2>
+<p>정해진 문장이 아니어도 됩니다. 아래는 예시이고, 비슷하게 말하면 알아듣습니다. 못 알아들으면 되묻고, 잘못 실행하지 않습니다.</p>
+<table>
+<thead><tr><th>하고 싶은 것</th><th>이렇게 말하면 됩니다</th></tr></thead>
+<tbody>
+<tr><td>문·트렁크</td><td class="say">"문 열어", "잠가", "트렁크 열어", "트렁크 닫아", "충전구 열어", "짐 들고 갈게"</td></tr>
+<tr><td>공조</td><td class="say">"더워", "추워", "에어컨 꺼", "22도로", "시트 열선 켜", "핸들 열선 켜", "성에 제거해", "창문 환기", "창문 닫아"</td></tr>
+<tr><td>계절</td><td class="say">"여름 준비", "겨울 준비"</td></tr>
+<tr><td>충전</td><td class="say">"충전 얼마나 됐어", "충전 언제 끝나", "충전 시작", "충전 그만", "충전 80퍼센트까지", "16암페어로 충전", "밤 11시부터 충전", "충전 끝나면 알려줘"</td></tr>
+<tr><td>상태·질문</td><td class="say">"배터리", "차 잠겼어?", "차 어디 있어", "밖에 몇 도야", "타이어 괜찮아?", "집까지 갈 수 있어?", "총 몇 km 탔어", "차 문제 있어?", "업데이트 있어?"</td></tr>
+<tr><td>요약</td><td class="say">"이번 충전 얼마나 넣었어", "이번 주행 어땠어", "주차하고 배터리 얼마나 빠졌어", "이번 주 차 어떻게 썼어"</td></tr>
+<tr><td>주차·찾기·길</td><td class="say">"지하 3층 B구역에 세웠어", "차 찾아줘", "차까지 안내", "강남역 가자", "가장 가까운 충전소로 가자", "근처 충전소 어디야", "여기가 집이야"</td></tr>
+<tr><td>타고 내릴 때</td><td class="say">"출발 준비", "차 데워놔", "도착했어", "내일 아침 7시 반에 출발", "예약 해제"</td></tr>
+<tr><td>미디어</td><td class="say">"노래 틀어", "음악 멈춰", "다음 곡", "볼륨 올려"</td></tr>
+<tr><td>모드</td><td class="say">"센트리 켜", "센트리 꺼", "강아지 모드 켜", "캠프 모드 켜", "과열 보호 켜", "발렛 모드 켜"</td></tr>
+<tr><td>기타</td><td class="say">"차고 문 열어", "빵빵", "업데이트 설치해", "이번 업데이트 뭐 바뀌었어", "키가 안 먹어"</td></tr>
+</tbody>
+</table>
+<p>켜고 끄는 말은 그대로 갑니다. "켜"라고 하면 켜고, "꺼"라고 하면 끕니다. 반대로 실행하는 일은 없습니다.</p>
+
+<h2 id="rear">7. 트렁크 뒤에 서면 열기 (Key Pro)</h2>
+<p>양손에 짐이 있을 때 씁니다. 차 뒤에 3초 서 있으면 트렁크가 열립니다.</p>
+<h3>먼저 한 번, 차마다 학습</h3>
+<p>차마다 운전석 옆과 트렁크 뒤의 블루투스 신호가 다르기 때문에, 처음 한 번 재야 합니다. 20초 걸립니다.</p>
+<ol>
+<li>차 옆에서 워치 앱 메뉴 → <strong>"트렁크 뒤 인식 학습 (20초)"</strong></li>
+<li>안내대로 <strong>운전석 문 옆</strong>에 서서 기다립니다 (약 10초)</li>
+<li>안내대로 <strong>트렁크 뒤</strong>에 서서 기다립니다 (약 10초)</li>
+<li>"학습됨"이 나오면 끝. 두 자리의 신호가 너무 비슷한 차는 "이 차에서는 안 됩니다"라고 나오고 기능이 켜지지 않습니다.</li>
+</ol>
+<h3>쓰는 법</h3>
+<ol>
+<li>차로 돌아가기 전에 워치에 <span class="say">"트렁크 뒤에 가면 열어줘"</span> 또는 <span class="say">"짐 들고 갈게"</span></li>
+<li>5분 안에 트렁크 뒤에 가서 <strong>3초 서 있으면</strong> 열립니다. 지나가기만 하면 안 열립니다.</li>
+<li>한 번 열리면 끝납니다. 5분이 지나도 끝납니다. 취소는 <span class="say">"트렁크 예약 취소"</span>.</li>
+</ol>
+<p>학습이 안 된 차에서는 이 기능이 켜지지 않습니다. 운전석 옆에서 트렁크가 열리는 일은 없습니다.</p>
+
+<h2 id="alerts">8. 먼저 알려 주는 것</h2>
+<p>워치가 알림을 보냅니다. 알림 안의 버튼으로 바로 처리할 수 있습니다.</p>
+<table>
+<thead><tr><th>언제</th><th>알림</th><th>버튼</th></tr></thead>
+<tbody>
+<tr><td>잠근 뒤 문이나 창문이 열려 있을 때</td><td>어디가 열려 있는지</td><td>잠그기 / 창문 닫기</td></tr>
+<tr><td>공조를 켜 둔 채 20분이 지났을 때</td><td>공조가 켜져 있다고</td><td>끄기</td></tr>
+<tr><td>집에서 배터리가 적은데 충전기를 안 꽂았을 때</td><td>충전기 꽂으라고</td><td>—</td></tr>
+<tr><td>아침에 나서기 30분 전 (원격 제어)</td><td>오늘 갈 거리에 배터리가 모자라면</td><td>—</td></tr>
+<tr><td>일요일 (원격 제어)</td><td>이번 주 차를 어떻게 썼는지 한 줄</td><td>—</td></tr>
+<tr><td>강아지 모드를 켜 두고 멀어졌을 때</td><td>실내 온도와 상태</td><td>—</td></tr>
+</tbody>
+</table>
+
+<h2 id="buy">9. 무료와 유료</h2>
+<table>
+<thead><tr><th></th><th>포함되는 것</th><th>가격</th></tr></thead>
+<tbody>
+<tr><td><strong>무료</strong></td><td>차 옆에서 문 열기·잠금. 잠금, 트렁크 닫기, 창문 닫기는 어디서든 항상 무료</td><td>0원</td></tr>
+<tr><td><strong>Key Pro</strong></td><td>트렁크, 프렁크, 충전구 열기. 트렁크 뒤에 서면 열기</td><td>6,900원 한 번</td></tr>
+<tr><td><strong>원격 제어</strong></td><td>멀리서 보고 제어하는 모든 것. 말로 하기, 알림, 요약 포함</td><td>월 6,500원 또는 연 65,000원. 처음 7일 무료</td></tr>
+</tbody>
+</table>
+<ul>
+<li>구매는 <strong>폰 앱</strong>의 "구매" 카드에서 합니다. 결제는 Google Play가 처리합니다.</li>
+<li>원격 제어 7일 무료는 첫 원격 사용부터 시작합니다. 7일 안에 해지하면 요금이 나가지 않습니다.</li>
+<li>해지: 폰의 Play 스토어 → 프로필 → 결제 및 정기 결제 → 정기 결제 → AllThatKey → 해지. 남은 기간까지는 계속 쓸 수 있습니다.</li>
+<li>환불: Google Play 환불 정책을 따릅니다. 문제가 있으면 <a href="mailto:leescvsir@gmail.com">메일</a>로 알려 주세요.</li>
+<li>같은 테슬라 계정이면 폰이나 워치를 바꿔도 구매가 그대로 따라옵니다.</li>
+</ul>
+
+<h2 id="safety">10. 안전 원칙</h2>
+<ul>
+<li>주행 중에는 트렁크, 프렁크, 충전구가 열리지 않습니다.</li>
+<li>멀리서 문을 여는 기능은 없습니다. 만들지 않습니다.</li>
+<li>트렁크 뒤 자동 열기는 사용자가 미리 말했을 때만, 5분 동안만, 한 번만 동작합니다.</li>
+<li>워치의 열쇠는 워치 보안 칩 안에 있고 앱도 꺼내 볼 수 없습니다. 워치를 잃어버리면 차 화면 → 제어 → 잠금 → 키에서 그 워치를 삭제하세요.</li>
+<li>말한 내용은 녹음으로 남지 않습니다. 워치 규칙이 모르는 문장만 문자로 서버에 보내 뜻을 알아냅니다. (<a href="/allthatkey/privacy.html">개인정보처리방침</a>)</li>
+</ul>
+
+<h2 id="trouble">11. 문제 해결</h2>
+<table>
+<thead><tr><th>증상</th><th>확인할 것</th></tr></thead>
+<tbody>
+<tr><td>워치가 차를 못 찾음</td><td>키 등록(4단계의 5번)이 끝났는지. 차에서 5m 안인지. 워치 블루투스가 켜져 있는지. 그래도 안 되면 워치 앱 메뉴 → "키 등록"을 다시.</td></tr>
+<tr><td>"키 등록이 안 돼 있어요"</td><td>차 안에서 키카드를 대고 등록하는 5단계를 하세요.</td></tr>
+<tr><td>멀리서 아무것도 안 됨</td><td>폰 앱 3번 카드 "원격 기능 허용"이 ✓인지. 폰이 켜져 있고 인터넷이 되는지. 워치와 폰이 연결돼 있는지.</td></tr>
+<tr><td>"차가 자고 있어요"</td><td>정상입니다. 차는 주차 후 잠들며, 앱이 깨우고 다시 시도합니다. 20~30초 걸릴 수 있습니다.</td></tr>
+<tr><td>말을 못 알아들음</td><td>폰이 켜져 있어야 합니다. 워치 마이크 권한을 확인하세요. 조용한 곳에서 짧게 말하세요. 되물으면 다시 말하면 됩니다.</td></tr>
+<tr><td>트렁크 뒤에 서도 안 열림</td><td>학습(7번)이 됐는지. "트렁크 뒤에 가면 열어줘"라고 먼저 말했는지. 5분이 지나지 않았는지. 멈춰서 3초 서 있었는지.</td></tr>
+<tr><td>상태가 오래됨 ("8시간 전 읽음")</td><td>차가 자고 있으면 마지막 값을 보여 줍니다. "깨워"라고 하면 새로 읽습니다. 깨우기는 하루 20번까지입니다.</td></tr>
+<tr><td>"오늘 한도를 넘었어요"</td><td>과도한 사용을 막는 하루 한도입니다. 잠금·트렁크 닫기·창문 닫기는 한도와 상관없이 됩니다. 자정(UTC)에 풀립니다.</td></tr>
+<tr><td>구매했는데 안 열림</td><td>폰 앱을 다시 열면 구매를 다시 확인합니다. 폰 앱 로그인 계정이 구매한 테슬라 계정과 같은지 확인하세요.</td></tr>
+<tr><td>워치 앱이 폰이 안 보인다고 함</td><td>폰의 Galaxy Wearable(또는 Pixel Watch) 앱에서 워치가 연결돼 있는지. 두 앱 모두 최신인지.</td></tr>
+</tbody>
+</table>
+
+<h2 id="cars">12. 지원 차량</h2>
+<ul>
+<li>모델 3, 모델 Y: 전 연식</li>
+<li>모델 S, 모델 X: 2021년식 이상</li>
+<li>사이버트럭</li>
+</ul>
+<p>2021년 이전 모델 S·X는 차량 자체가 이 방식의 열쇠(블루투스 키)를 지원하지 않습니다. 폰 앱에서 차를 고를 때 미리 알려 줍니다.</p>
+
+<p style="margin-top:3em;font-size:.9rem;color:#888">AllThatKey는 테슬라의 공식 앱이 아니며 Tesla, Inc.와 제휴 관계가 없습니다. Tesla, Model 3, Model Y, Model S, Model X는 Tesla, Inc.의 상표입니다.</p>
+</main></body>
+</html>

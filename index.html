@@ -529,31 +529,31 @@
 
     <div class="grid">
 
-      <!-- AllThatKey — 테슬라 워치 비서. 공개 접속 주소가 없어(개인용·Tailscale) 링크 없는 카드로 둔다.
-           썸네일의 예시 3개는 돌고 있는 브레인에 실제로 물어 받은 응답이다(지어낸 문구 아님). -->
-      <div class="card" style="cursor:default;">
-        <span class="tag beta">LIVE · 비공개</span>
-        <img class="card-thumb" src="/thumbs/allthatkey.png" alt="AllThatKey — 테슬라 운전자 손목시계 비서" width="720" height="384" loading="lazy"/>
-        <div class="sub">// TESLA VOICE COPILOT</div>
+      <!-- AllThatKey — 테슬라 워치 열쇠. Google Play 심사 중; 사용 설명서로 연결한다. -->
+      <a class="card" href="/allthatkey/guide.html"
+         onmousemove="this.style.setProperty('--mx', event.offsetX + 'px')">
+        <span class="tag beta">Google Play 심사 중</span>
+        <img class="card-thumb" src="/thumbs/allthatkey.png" alt="AllThatKey — 테슬라 워치 열쇠" width="720" height="384" loading="lazy"/>
+        <div class="sub">// TESLA WATCH KEY</div>
         <h3>AllThatKey</h3>
         <p>
-          손목시계에 말하면 <strong style="color:var(--accent);">64개 의도</strong> 중 하나를 골라 차를 움직인다.
-          문·공조·충전·센트리·예약 출발은 물론, 지하 주차장에서 GPS 대신
-          <strong style="color:var(--accent);">"지하 3층 B구역"을 말로 남기고</strong>, 도착 한마디로 공조·창문·잠금을 한 번에 끝낸다.
-          테슬라가 앱에 안 열어주는 것(바람 방향·FSD)은 되는 척하지 않고 그렇다고 말한다.
+          Wear OS 워치로 테슬라를 열고 잠근다. 차 옆에서는 블루투스로, 폰 없이.
+          멀리서는 공조·충전·잠금·상태를 폰을 거쳐 다룬다.
+          정해진 명령어가 아니라 <strong style="color:var(--accent);">보통 말</strong>로 시키고
+          (<strong style="color:var(--accent);">76개 동작</strong>), 짐을 들고 트렁크 뒤에 서면 트렁크가 열린다.
+          주행 중 개폐 불가, 원격 문 열기 없음.
         </p>
         <div class="badges">
-          <span class="badge hot">Tesla Fleet API</span>
           <span class="badge hot">Wear OS</span>
-          <span class="badge hot">의도 64종</span>
-          <span class="badge">온디맨드 2초</span>
-          <span class="badge">Tailscale</span>
+          <span class="badge hot">Tesla BLE 키</span>
+          <span class="badge hot">한국어 자유 문장</span>
+          <span class="badge">Fleet API</span>
         </div>
         <div class="cta">
-          <span class="url">kr.allthatai.keyprobe</span>
-          <span class="arrow">개인용 가동 중</span>
+          <span class="url">allthatai.kr/allthatkey/guide</span>
+          <span class="arrow">사용 설명서 →</span>
         </div>
-      </div>
+      </a>
 
       <!-- AllThatToon -->
       <a class="card" href="https://toon.allthatai.kr" target="_blank" rel="noopener"
