@@ -1,22 +1,35 @@
-# AllThatHit 코칭 서버가 살아 있는지, 집 PC 워커가 붙어 있는지 15분마다 본다.
-# 실패하면 GitHub 가 저장소 주인에게 메일을 보낸다(Actions 실패 알림).
-# 버셀에는 15분에 요청 1개(하루 96개) - 하비 한도의 0.01%.
+# AllThatHit 코칭 서버와 집 PC 워커 감시.
+#
+# 15분 예약은 GitHub 가 자주 건너뛰었다(10시간에 3번). 그래서 한 시간에 한 번
+# 켜지고, 켜진 뒤 55분 동안 5분마다 스스로 본다 - 예약이 늦어도 빈틈이 짧다.
+# 이상하면 실패로 끝나고 GitHub 가 저장소 주인에게 메일을 보낸다.
+# 버셀에는 5분에 요청 1개(하루 288개) - 하비 한도의 0.03%.
 name: allthathit-watch
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "3 * * * *"
   workflow_dispatch:
+concurrency:
+  group: allthathit-watch
+  cancel-in-progress: true
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 58
     steps:
-      - name: server and house worker
+      - name: watch for 55 minutes
         run: |
-          set -e
-          body=$(curl -s -m 20 https://allthatfishing-brain.vercel.app/healthz || true)
-          echo "$body"
-          echo "$body" | grep -q '"ok":true' || { echo "::error::코칭 서버 응답 없음"; exit 1; }
-          seen=$(echo "$body" | grep -oE '"house_seen_s":[0-9]+' | grep -oE '[0-9]+' || echo 99999)
-          if [ "$seen" -gt 600 ]; then echo "::error::집 PC 워커가 ${seen}초째 안 보임 (PC 전원·로그인 확인)"; exit 1; fi
-          echo "ok: house seen ${seen}s ago"
+          fail=0
+          for i in $(seq 1 11); do
+            body=$(curl -s -m 20 https://allthatfishing-brain.vercel.app/healthz || true)
+            seen=$(echo "$body" | grep -oE '"house_seen_s":[0-9]+' | grep -oE '[0-9]+' || echo 99999)
+            if ! echo "$body" | grep -q '"ok":true'; then
+              echo "::error::코칭 서버 응답 없음 ($(date -u +%H:%M) UTC)"; fail=1; break
+            fi
+            if [ "$seen" -gt 600 ]; then
+              echo "::error::집 PC 워커가 ${seen}초째 안 보임 - PC 전원·로그인 확인"; fail=1; break
+            fi
+            echo "$(date -u +%H:%M) ok, house seen ${seen}s ago"
+            [ "$i" -lt 11 ] && sleep 300
+          done
+          exit $fail
