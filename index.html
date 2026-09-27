@@ -221,17 +221,20 @@
     }
     @keyframes pulse { 0%,100% {opacity:1; transform:scale(1);} 50% {opacity:.4; transform:scale(.7);} }
     /* ── SUITE STRIP (제품 로고 라인업) ── */
-    .suite { display:flex; flex-wrap:wrap; gap:14px; margin-top:34px; }
+    /* 다섯 칸(Toon·Link·Ditto·Real·Hz)이 히어로 왼쪽 단 안에서 한 줄로 서야 한다.
+       Hz 를 넣자 마지막 하나만 아랫줄로 떨어져 '빠뜨린 것'처럼 보였다 — 여백을 조여
+       다섯을 나란히 세운다. 폭이 모자라는 화면에서는 2+3 으로 고르게 접히게 둔다. */
+    .suite { display:flex; flex-wrap:wrap; gap:10px; margin-top:34px; }
     .suite a {
-      display:flex; align-items:center; gap:11px; text-decoration:none;
-      padding:9px 15px 9px 9px; border:1px solid var(--border); border-radius:14px;
+      display:flex; align-items:center; gap:9px; text-decoration:none;
+      padding:7px 12px 7px 7px; border:1px solid var(--border); border-radius:13px;
       background:var(--surface); transition:transform .2s ease, border-color .2s ease, background .2s ease;
     }
     .suite a:hover { transform:translateY(-3px); border-color:var(--border2); background:var(--surface2); }
-    .suite img { width:38px; height:38px; border-radius:10px; display:block; }
+    .suite img { width:32px; height:32px; border-radius:9px; display:block; }
     .suite .nm { display:flex; flex-direction:column; line-height:1.2; }
-    .suite .nm b { font-size:14px; color:var(--text); font-weight:800; letter-spacing:-0.2px; }
-    .suite .nm small { font-family:'JetBrains Mono',monospace; font-size:9.5px; color:var(--muted); letter-spacing:0.5px; }
+    .suite .nm b { font-size:13.5px; color:var(--text); font-weight:800; letter-spacing:-0.2px; }
+    .suite .nm small { font-family:'JetBrains Mono',monospace; font-size:9px; color:var(--muted); letter-spacing:0.2px; }
     /* ── SECTION ── */
     .section-head { margin:56px 0 24px; display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:16px; }
     .section-head h2 { font-family:'Pretendard', sans-serif; font-weight:800; font-size:28px; letter-spacing:-0.3px; }
@@ -404,20 +407,25 @@
       </div>
       <div class="suite">
         <a href="https://toon.allthatai.kr" target="_blank" rel="noopener">
-          <img src="/logos/allthattoon.png" alt="Toon" width="38" height="38"/>
+          <img src="/logos/allthattoon.png" alt="Toon" width="32" height="32"/>
           <span class="nm"><b>Toon</b><small>AI WEBTOON</small></span>
         </a>
         <a href="https://link.allthatai.kr" target="_blank" rel="noopener">
-          <img src="/logos/allthatlink.png" alt="Link" width="38" height="38"/>
+          <img src="/logos/allthatlink.png" alt="Link" width="32" height="32"/>
           <span class="nm"><b>Link</b><small>GPU TRAINING</small></span>
         </a>
         <a href="https://ditto.allthatai.kr" target="_blank" rel="noopener">
-          <img src="/logos/ditto.png" alt="Ditto" width="38" height="38"/>
+          <img src="/logos/ditto.png" alt="Ditto" width="32" height="32"/>
           <span class="nm"><b>Ditto</b><small>HYPERLOCAL</small></span>
         </a>
         <a href="https://allthatai-real.vercel.app/" target="_blank" rel="noopener">
-          <img src="/logos/allthatreal.png" alt="Real" width="38" height="38"/>
+          <img src="/logos/allthatreal.png" alt="Real" width="32" height="32"/>
           <span class="nm"><b>Real</b><small>SCAM-CHECK</small></span>
+        </a>
+        <!-- Hz — 리드 문단이 "AI 음악 Hz까지"라고 말해 놓고 이 줄에만 빠져 있었다. 로고는 진작 있었다. -->
+        <a href="https://www.youtube.com/@allthathz" target="_blank" rel="noopener">
+          <img src="/logos/allthathz.png" alt="Hz" width="32" height="32"/>
+          <span class="nm"><b>Hz</b><small>AI MUSIC</small></span>
         </a>
       </div>
       </div>
