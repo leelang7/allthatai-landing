@@ -1,0 +1,22 @@
+# AllThatHit 코칭 서버가 살아 있는지, 집 PC 워커가 붙어 있는지 15분마다 본다.
+# 실패하면 GitHub 가 저장소 주인에게 메일을 보낸다(Actions 실패 알림).
+# 버셀에는 15분에 요청 1개(하루 96개) - 하비 한도의 0.01%.
+name: allthathit-watch
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: server and house worker
+        run: |
+          set -e
+          body=$(curl -s -m 20 https://allthatfishing-brain.vercel.app/healthz || true)
+          echo "$body"
+          echo "$body" | grep -q '"ok":true' || { echo "::error::코칭 서버 응답 없음"; exit 1; }
+          seen=$(echo "$body" | grep -oE '"house_seen_s":[0-9]+' | grep -oE '[0-9]+' || echo 99999)
+          if [ "$seen" -gt 600 ]; then echo "::error::집 PC 워커가 ${seen}초째 안 보임 (PC 전원·로그인 확인)"; exit 1; fi
+          echo "ok: house seen ${seen}s ago"
