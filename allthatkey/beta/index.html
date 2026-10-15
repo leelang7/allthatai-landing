@@ -13,7 +13,7 @@
 <style>
   :root {
     --bg: #0f141b; --card: #161c24; --ink: #ffffff; --soft: #b6c0cc;
-    --accent: #e8443a; --accent-ink: #ffffff; --done: #3ec27a; --line: #26303b;
+    --accent: #4f8dff; --accent-ink: #ffffff; --done: #3ec27a; --line: #26303b;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; }
@@ -40,8 +40,8 @@
   .tip b { color: var(--ink); }
   a.btn { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 58px; border-radius: 14px;
           background: var(--accent); color: var(--accent-ink); font-size: 19px; font-weight: 800; text-decoration: none;
-          box-shadow: 0 5px 0 #a8302a; transition: transform .05s, box-shadow .05s; }
-  a.btn:active { transform: translateY(4px); box-shadow: 0 1px 0 #a8302a; }
+          box-shadow: 0 5px 0 #2f63c4; transition: transform .05s, box-shadow .05s; }
+  a.btn:active { transform: translateY(4px); box-shadow: 0 1px 0 #2f63c4; }
   .step.done a.btn { background: #2a3442; color: var(--soft); box-shadow: none; }
   ol { margin: 0; padding-left: 1.2em; color: var(--soft); font-size: 16px; }
   ol li { margin: 4px 0; }
@@ -55,13 +55,13 @@
 <div class="hero">
   <img src="/allthatkey/icon.png" alt="AllThatKey">
   <h1>AllThatKey</h1>
-  <p>갤럭시 워치로 테슬라를 여는 열쇠 · 폰에서 이 순서대로</p>
+  <p>폰에서 이 순서대로 누르세요</p>
 </div>
 
 <div class="step" id="s1">
   <div class="head"><div class="num">1</div><div class="title">테스터 참여</div></div>
   <a class="btn" href="https://play.google.com/apps/internaltest/4701685450817448176" target="_blank" rel="noopener" data-step="1">테스터 되기</a>
-  <p class="tip">열린 페이지에서 <b>"테스터 되기"</b>를 누르세요. 결제와 기능은 일반 버전과 같습니다.</p>
+  <p class="tip">열린 화면에서 <b>"테스터 되기"</b> 한 번 더</p>
 </div>
 
 <div class="step" id="s2">
@@ -73,17 +73,12 @@
 <div class="step" id="s3">
   <div class="head"><div class="num">3</div><div class="title">워치에 설치</div></div>
   <a class="btn" href="https://play.google.com/store/apps/details?id=kr.allthatai.keyprobe" target="_blank" rel="noopener" data-step="3">워치에 설치 ⌚</a>
-  <p class="tip">Play 스토어에서 <b>"설치"</b> 옆 ▼ 또는 <b>"다른 기기에 설치"</b>에서 <b>내 워치</b>를 고르세요.<br>
-  또는 워치에서 <b>Play 스토어 → 검색 → AllThatKey</b>. 테스터 참여 직후에는 몇 분 걸릴 수 있습니다.</p>
+  <p class="tip"><b>"설치"</b> 옆 ▼ → <b>내 워치</b><br>또는 워치 Play 스토어에서 <b>AllThatKey</b> 검색</p>
 </div>
 
 <div class="step" id="s4">
   <div class="head"><div class="num">4</div><div class="title">처음 설정</div></div>
-  <ol>
-    <li>폰에서 <b>AllThatKey</b>를 열면 순서가 카드로 나옵니다</li>
-    <li><b>테슬라 로그인</b> → <b>차 고르기</b> → <b>원격 기능 허용</b></li>
-    <li>차에 타서 워치 앱의 <b>"키 등록"</b>을 누르고, 차 화면에 확인이 뜨면 <b>키카드를 컵홀더 앞 콘솔에</b> 댑니다</li>
-  </ol>
+  <p class="tip" style="margin-top:0">폰 앱: <b>테슬라 로그인 → 차 선택 → 원격 허용</b><br>차 안에서: 워치 <b>"키 등록"</b> → 키카드를 컵홀더 앞에</p>
 </div>
 
 <p class="foot"><a href="/allthatkey/guide.html">사용 설명서</a> · 문의 leescvsir@gmail.com</p>

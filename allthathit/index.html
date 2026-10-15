@@ -2,130 +2,111 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AllThatHit 사용 안내</title>
-<meta name="description" content="갤럭시 워치 쭈꾸미·갑오징어 계수기 AllThatHit 사용 안내. 출조 시작, 세는 법, 코칭 질문, 기록, 순위, 백업과 복원.">
-<meta name="robots" content="index,follow">
-<style>
-  :root { color-scheme: light dark; }
-  body { margin: 0; font: 16px/1.7 -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
-         background: #fff; color: #1a1a1a; }
-  main { max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; }
-  h1 { font-size: 1.7rem; margin: 0 0 4px; }
-  h2 { font-size: 1.2rem; margin-top: 2.2em; padding-top: .6em; border-top: 1px solid #e5e5e5; }
-  .lead { color: #555; margin: 0 0 1.5em; }
-  table { border-collapse: collapse; width: 100%; font-size: .95rem; }
-  th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
-  th { background: #f6f6f6; }
-  code { background: #f2f2f2; padding: 1px 4px; border-radius: 3px; }
-  .box { background: #f6f6f6; border-radius: 10px; padding: 12px 16px; margin: 1em 0; }
-  .warn { background: #fff5e6; }
-  nav a { margin-right: 12px; }
-  @media (prefers-color-scheme: dark) {
-    body { background: #0f1115; color: #e6e6e6; }
-    h2 { border-color: #2a2d33; } .lead { color: #aaa; }
-    th { background: #1a1d22; } th, td { border-color: #2a2d33; }
-    code, .box { background: #1a1d22; } .warn { background: #2a2416; }
-  }
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AllThatHit 쭈꾸미 계수기</title>
+<meta name="description" content="갤럭시 워치 쭈꾸미·갑오징어 계수기. 화면 한 번 누르면 한 마리.">
+<meta name="theme-color" content="#0e1319">
+<meta property="og:title" content="AllThatHit · 워치 쭈꾸미 계수기">
+<meta property="og:description" content="화면 한 번 누르면 한 마리. 물때·바람은 물어보면 답합니다.">
+<meta property="og:image" content="https://allthatai.kr/allthathit/img/w1.webp">
+<link rel="icon" href="/allthathit/img/icon.webp">
+<link rel="stylesheet" href="/app-pages.css">
 </head>
-<body><main>
-<h1>AllThatHit 사용 안내</h1>
-<p class="lead">갤럭시 워치(Wear OS 4 이상)에서 쭈꾸미·갑오징어를 세는 앱입니다. 폰 앱은 없습니다.</p>
-<p><strong>설치:</strong> <a href="https://play.google.com/store/apps/details?id=kr.allthatai.allthathit">Google Play의 AllThatHit 페이지</a>에서 "설치" 옆 ▼를 눌러 <strong>워치</strong>를 고릅니다. 워치의 Play 스토어에서 <code>AllThatHit</code>를 검색해도 됩니다.</p>
-<nav>
-  <a href="#start">시작</a><a href="#count">세기</a><a href="#auto">출조 시작·끝</a><a href="#brain">질문</a>
-  <a href="#records">기록</a><a href="#board">순위</a><a href="#backup">백업·복원</a><a href="#sub">구독</a><a href="#faq">자주 묻는 것</a>
-</nav>
+<body class="hit"><main>
 
-<h2 id="start">1. 처음 켜면</h2>
-<ol>
-  <li>권한 3개를 허용합니다. <strong>위치</strong>(포인트 기록·날씨), <strong>마이크</strong>(말로 세기), <strong>알림</strong>(출조 중 마릿수 표시).</li>
-  <li>큰 숫자가 보이면 끝입니다. 이 화면이 계수기입니다.</li>
-  <li>위쪽 띠 <strong>메뉴 · 출조 시작</strong>을 누르고 <strong>출조 시작</strong>을 누르면 출조가 열립니다.</li>
-</ol>
-<p>워치 설정 → 계정 및 백업 → 백업이 켜져 있으면, 구글 계정으로 기록이 자동 백업됩니다(<a href="#backup">7번</a>).</p>
-
-<h2 id="count">2. 세는 법</h2>
-<table>
-<tr><th>할 일</th><th>방법</th></tr>
-<tr><td>한 마리</td><td>화면 아무데나 <strong>탭</strong>. 또는 오른쪽 <strong>+</strong></td></tr>
-<tr><td>잘못 셌을 때</td><td>왼쪽 <strong>−</strong>. 또는 "취소"라고 말하기</td></tr>
-<tr><td>갑오징어로 바꾸기</td><td>아래 <strong>갑오징어</strong> 칩을 탭. 다시 탭하면 쭈꾸미</td></tr>
-<tr><td>말로 세기</td><td>마이크 단추 → "쭈꾸미 두 마리", "갑오징어 하나", "두 마리 빼"</td></tr>
-<tr><td>출조 끝내기</td><td>메뉴 → <strong>출조 종료</strong>. 안 눌러도 저절로 끝납니다(<a href="#auto">3번</a>)</td></tr>
-</table>
-<p>0.6초 안에 두 번 눌리면 한 번으로 셉니다. 젖은 장갑으로 눌러도 됩니다.</p>
-
-<h2 id="auto">3. 출조 시작과 끝</h2>
-<p><strong>시작:</strong> 위쪽 띠 → <strong>출조 시작</strong>. 깜빡하고 화면을 먼저 탭하면 "출조를 시작하고 이 한 마리를 셀까요?"라고 묻습니다 — <strong>네</strong>를 누르면 시작과 함께 한 마리가 세어집니다.</p>
-<p><strong>끝:</strong> 메뉴 → <strong>출조 종료</strong>. 안 눌러도 아래 중 하나면 저절로 끝납니다.</p>
-<ul>
-  <li>워치를 충전기에 올림 (2분 뒤)</li>
-  <li>워치를 손목에서 풂 (10분 뒤)</li>
-  <li>고패질도 마릿수도 한 시간 동안 없음</li>
-</ul>
-<p>끝난 시각은 마지막으로 낚시한 때로 적힙니다. 한 마리도 세지 않고 저절로 끝난 출조는 기록에 남기지 않습니다.</p>
-<p>출조를 시작하지 않으면 앱은 센서를 켜지 않고 배터리도 쓰지 않습니다.</p>
-<ul>
-  <li>메뉴 → <strong>자동 감지 켜기</strong>(처음에는 꺼져 있음): 켜면 고패질 리듬이 4분 이어질 때 출조가 저절로 열립니다. 켜 둔 동안은 출조가 아닐 때도 동작 센서를 낮은 빈도로 봅니다.</li>
-  <li>메뉴 → <strong>내 고패질 재기</strong>: 30초 동안 평소대로 흔들면 내 리듬을 잽니다. 자동 감지를 쓸 때만 필요합니다.</li>
-</ul>
-
-<h2 id="brain">4. 물어보면 답합니다</h2>
-<p>메뉴 → <strong>지금 어때?</strong>, 또는 마이크 단추로 말하기. 답은 손목에 글로 뜨고 소리로도 읽어 줍니다(메뉴 → 소리 끄기).</p>
-<div class="box">
-"오늘 몇 물이야" · "바람 세져?" · "해 언제 져" · "수온 몇 도야" · "지금 몇 마리야" · "지난주엔 몇 마리 했지"
+<div class="hero">
+  <img class="icon" src="/allthathit/img/icon.webp" alt="">
+  <h1>AllThatHit</h1>
+  <p>갤럭시 워치 쭈꾸미·갑오징어 계수기</p>
+  <div class="cta">
+    <a class="btn" href="https://play.google.com/store/apps/details?id=kr.allthatai.allthathit" target="_blank" rel="noopener">
+      <svg><use href="/icons.svg#i-play"/></svg>Play 스토어에서 설치</a>
+    <a class="btn ghost" href="/allthathit/beta/">설치 방법</a>
+  </div>
+  <p class="note" style="margin-top:10px">워치 전용 앱입니다 · Wear OS 4 이상</p>
 </div>
-<p>물때는 서해 7물때식, 바람·수온·파고는 지금 있는 자리의 예보입니다. 인터넷이 없으면 워치가 아는 것으로만 답합니다(마릿수·시간당). 출조 중 20분마다 코칭 한 줄이 옵니다(메뉴 → 코칭 끄기).</p>
 
-<h2 id="records">5. 기록</h2>
-<table>
-<tr><th>메뉴</th><th>보이는 것</th></tr>
-<tr><td>오늘 기록</td><td>마릿수, 물에 있던 시간, 시간당, 최근 30분</td></tr>
-<tr><td>오늘 그래프</td><td>15분마다 몇 마리</td></tr>
-<tr><td>지난 출조</td><td>출조마다 마릿수, 내 최고 기록</td></tr>
-<tr><td>내 포인트</td><td>어느 자리에서 잘 나왔는지. 좌표는 플로터에 넣는 도·분 표기(예: <code>36°18.00′ 126°28.80′</code>)</td></tr>
-<tr><td>배운 것</td><td>동작 센서가 확인한 챔질 횟수와 비율</td></tr>
-</table>
-<p>기록은 워치 안에만 있습니다. 좌표는 서버로 나가지 않습니다.</p>
+<section>
+  <div class="shots watch">
+    <img src="/allthathit/img/w1.webp" alt="계수 화면" loading="lazy">
+    <img src="/allthathit/img/w2.webp" alt="최근 30분 흐름" loading="lazy">
+    <img src="/allthathit/img/w3.webp" alt="물때 답" loading="lazy">
+    <img src="/allthathit/img/w4.webp" alt="바람 답" loading="lazy">
+    <img src="/allthathit/img/w5.webp" alt="내 포인트" loading="lazy">
+    <img src="/allthathit/img/w6.webp" alt="오늘 기록" loading="lazy">
+    <img src="/allthathit/img/w7.webp" alt="순위" loading="lazy">
+  </div>
+</section>
 
-<h2 id="board">6. 순위 (원할 때만)</h2>
-<p>메뉴 → 순위 → <strong>참여하기</strong>. 나가는 것은 별명(앱이 붙임)·마릿수·1km 단위 구역·날짜·검증 점수뿐입니다. 정확한 자리는 나가지 않습니다.</p>
-<ul>
-  <li>동작 센서가 챔질을 확인한 비율이 60%를 넘는 출조만 순위에 듭니다. 집에서 누른 숫자는 들지 못합니다.</li>
-  <li>구역 순위는 이틀 뒤, 세 명 이상 다녀간 곳만 보입니다.</li>
-  <li><strong>참여 그만두기</strong>를 누르면 올린 기록이 전부 지워집니다.</li>
-</ul>
+<section>
+  <h2>이렇게 써요</h2>
+  <div class="steps">
+    <div class="step"><div><b>위쪽 띠 › 출조 시작</b><span>누르기 전엔 아무것도 감시하지 않습니다</span></div></div>
+    <div class="step"><div><b>화면 누르면 한 마리</b><span>잘못 셌으면 왼쪽 − 또는 "취소"</span></div></div>
+    <div class="step"><div><b>말로도 셉니다</b><span>"쭈꾸미 두 마리" "갑오징어 하나"</span></div></div>
+    <div class="step"><div><b>끝은 알아서</b><span>충전하거나 워치를 풀면 종료</span></div></div>
+  </div>
+</section>
 
-<h2 id="backup">7. 백업과 복원</h2>
-<p>워치를 바꿔도 기록이 남게 두 가지가 있습니다.</p>
-<ol>
-  <li><strong>구글 계정 백업</strong> — 워치 설정의 백업이 켜져 있으면 충전 중·Wi-Fi 연결 시 하루 한 번 구글 드라이브에 저장됩니다. 같은 계정의 새 워치에 앱을 깔면 돌아옵니다.</li>
-  <li><strong>백업 코드</strong> — 메뉴 → 개인정보 → <strong>기록 백업</strong>에 12자 코드가 있습니다. 출조가 끝날 때마다 기록이 이 코드로 잠겨 서버에 올라갑니다. 새 워치에서 메뉴 → 개인정보 → <strong>기록 복원</strong>에 코드를 치면 마릿수·포인트·배운 것이 돌아옵니다.</li>
-</ol>
-<div class="box warn">코드는 사진으로 찍어 두세요. 코드는 워치에만 있고 서버는 내용을 읽을 수 없어서, 코드를 잃으면 사본도 되찾을 수 없습니다.</div>
+<section>
+  <h2>물어보면 답합니다</h2>
+  <div class="chips">
+    <span>"지금 어때?"</span><span>"오늘 몇 물이야"</span><span>"바람 세져?"</span>
+    <span>"해 언제 져"</span><span>"수온 몇 도야"</span><span>"지난주엔 몇 마리 했지"</span>
+  </div>
+  <p class="note">물때는 서해 7물때식, 날씨는 지금 자리 예보. 인터넷이 필요합니다.</p>
+</section>
 
-<h2 id="sub">8. 코칭 구독</h2>
-<p>계수·기록·내 포인트·순위는 무료이고 앞으로도 무료입니다. 파는 것은 코칭(자동 코칭과 질문)뿐입니다.</p>
-<table>
-<tr><th>무료</th><td>질문 하루 5번. 첫 출조(30분 이상)는 자동 코칭·질문 무제한</td></tr>
-<tr><th>월</th><td>6,900원</td></tr>
-<tr><th>시즌 (3개월)</th><td>14,900원</td></tr>
-<tr><th>1년</th><td>39,000원</td></tr>
-</table>
-<p>메뉴 → <strong>코칭 구독</strong>. 결제와 해지는 구글 플레이가 맡습니다(플레이 스토어 → 정기 결제). 해지해도 남은 기간은 그대로 쓸 수 있습니다.</p>
+<section>
+  <h2>기록</h2>
+  <div class="tiles">
+    <div class="tile"><b>오늘</b><span>마릿수 · 시간당 · 그래프</span></div>
+    <div class="tile"><b>지난 출조</b><span>출조별 마릿수 · 최고 기록</span></div>
+    <div class="tile"><b>내 포인트</b><span>잘 나온 자리 · 도·분 좌표</span></div>
+    <div class="tile"><b>워치 안에만</b><span>좌표는 서버로 안 나감</span></div>
+  </div>
+</section>
 
-<h2 id="privacy">9. 개인정보</h2>
-<p>회원가입·로그인·광고가 없습니다. 무엇이 워치에 남고 무엇이 나가는지는 <a href="/allthathit/privacy">개인정보처리방침</a>에 그대로 적혀 있습니다. 메뉴 → 개인정보 → <strong>전부 지우기</strong>로 워치와 서버의 기록을 지울 수 있습니다.</p>
+<section>
+  <h2>요금</h2>
+  <div class="cols">
+    <div class="col"><h3>무료</h3><div class="price">0원</div><ul><li>계수 · 기록 · 포인트 · 순위</li><li>질문 하루 5번</li><li>첫 출조(30분 이상) 코칭 무제한</li></ul></div>
+    <div class="col"><h3>코칭 구독</h3><div class="price">월 6,900원</div><ul><li>3개월 14,900원</li><li>1년 39,000원</li><li>자동 코칭 · 질문 무제한</li></ul></div>
+  </div>
+  <p class="note">메뉴 → 코칭 구독. 해지는 Play 스토어 → 정기 결제.</p>
+</section>
 
-<h2 id="faq">10. 자주 묻는 것</h2>
-<p><strong>출조가 저절로 켜졌는데 낚시가 아니었어요.</strong> 자동 감지를 켠 경우에만 생깁니다. 알림의 <strong>낚시 아님</strong>을 누르면 그 출조가 지워지고 그 자리에서는 다시 켜지지 않습니다. 메뉴 → 자동 감지 끄기로 아예 끌 수 있습니다.</p>
-<p><strong>마릿수 화면이 안 보여요.</strong> 뒤로 가기(오른쪽에서 왼쪽으로 쓸기)나 메뉴 → 뒤로. 출조 중에는 알림에서도 +1·−가 됩니다.</p>
-<p><strong>코칭이 답을 안 해요.</strong> 인터넷이 없거나 서버가 잠깐 쉬는 때입니다. 계수는 영향이 없습니다. 메뉴 → 상태에서 네트워크와 코칭 상태가 보입니다.</p>
-<p><strong>배터리를 얼마나 쓰나요.</strong> 출조를 시작하지 않으면 쓰지 않습니다. 출조 중에는 GPS와 동작 센서가 켜집니다. 자동 감지를 켠 경우에만 출조가 아닐 때도 가속도 센서를 낮은 빈도로 봅니다.</p>
+<section>
+  <h2>더 알아보기</h2>
+  <details><summary>출조가 저절로 끝나는 때</summary><div>
+    <p>충전기에 올림(2분 뒤) · 손목에서 풂(10분 뒤) · 한 시간 동안 고패질도 마릿수도 없음.</p>
+    <p>한 마리도 세지 않은 출조는 기록에 남기지 않습니다.</p>
+  </div></details>
+  <details><summary>자동 감지 (선택)</summary><div>
+    <p>메뉴 → 자동 감지 켜기. 고패질 리듬이 4분 이어지면 출조가 저절로 열립니다. 처음엔 꺼져 있습니다.</p>
+  </div></details>
+  <details><summary>순위 (원할 때만)</summary><div>
+    <p>메뉴 → 순위 → 참여하기. 나가는 것은 별명 · 마릿수 · 1km 구역 · 날짜뿐입니다. 정확한 자리는 나가지 않습니다.</p>
+  </div></details>
+  <details><summary>워치를 바꿀 때 (백업·복원)</summary><div>
+    <p>워치 설정의 구글 백업이 켜져 있으면 자동으로 돌아옵니다.</p>
+    <p>또는 메뉴 → 개인정보 → 기록 백업의 12자 코드를 새 워치의 기록 복원에 입력. 코드는 사진으로 찍어 두세요.</p>
+  </div></details>
+  <details><summary>배터리</summary><div>
+    <p>출조를 시작하지 않으면 쓰지 않습니다. 출조 중에는 GPS와 동작 센서가 켜집니다.</p>
+  </div></details>
+  <details><summary>코칭이 답을 안 해요</summary><div>
+    <p>인터넷이 없거나 서버가 잠깐 쉬는 때입니다. 세는 것은 영향이 없습니다. 메뉴 → 상태에서 확인할 수 있습니다.</p>
+  </div></details>
+</section>
 
-<h2 id="contact">11. 문의</h2>
-<p>leescvsir@gmail.com</p>
+<footer>
+  <nav>
+    <a href="/allthathit/privacy">개인정보처리방침</a>
+    <a href="mailto:leescvsir@gmail.com">문의</a>
+  </nav>
+  회원가입·로그인·광고가 없습니다. 메뉴 → 개인정보 → 전부 지우기로 기록을 지울 수 있습니다.
+</footer>
+
 </main></body>
 </html>
