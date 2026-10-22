@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>의견 보내기 · AllThatAI</title>
+<meta name="description" content="AllThatKey · AllThatHit 의견 보내기. 한 번 누르면 개발자에게 바로 갑니다.">
+<meta name="theme-color" content="#0e1319">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/app-pages.css">
+<style>
+  .apps { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .app, .kind {
+    display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px 8px;
+    border-radius: 16px; background: var(--card); border: 2px solid var(--line); color: var(--ink);
+    font: inherit; font-weight: 800; cursor: pointer;
+  }
+  .app img { width: 52px; height: 52px; border-radius: 14px; }
+  .kinds { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .kind svg { width: 34px; height: 34px; }
+  .kind[data-kind="good"] svg { color: var(--ok); }
+  .kind[data-kind="bad"] svg { color: #ff6b6b; }
+  .kind[data-kind="idea"] svg { color: #ffd23f; }
+  .app.on, .kind.on { border-color: var(--accent); background: var(--card2); }
+  textarea, input {
+    width: 100%; border-radius: 14px; border: 1px solid var(--line); background: var(--card); color: var(--ink);
+    font: inherit; padding: 14px; margin-top: 10px;
+  }
+  textarea { min-height: 120px; resize: vertical; }
+  #send { width: 100%; border: 0; margin-top: 14px; cursor: pointer; font: inherit; font-weight: 800; }
+  #send:disabled { opacity: .45; cursor: default; }
+  #err { color: #ff8a8a; min-height: 1.4em; margin: 8px 0 0; text-align: center; }
+  #done { display: none; text-align: center; padding: 40px 0; }
+  #done svg { width: 64px; height: 64px; color: var(--ok); }
+  #done h2 { margin: 12px 0 4px; }
+  .step-title { color: var(--soft); font-size: 15px; margin: 22px 0 8px; }
+</style>
+</head>
+<body><main>
+
+<div id="form">
+  <div class="hero" style="padding-top:28px">
+    <h1 style="font-size:26px">의견 보내기</h1>
+    <p>누르면 개발자에게 바로 갑니다</p>
+  </div>
+
+  <p class="step-title">1 · 어떤 앱이요?</p>
+  <div class="apps">
+    <button class="app" data-app="key" type="button"><img src="/allthatkey/img/icon.webp" alt="">AllThatKey<span style="font-weight:400;color:var(--soft);font-size:14px">테슬라 워치 키</span></button>
+    <button class="app" data-app="hit" type="button"><img src="/allthathit/img/icon.webp" alt="">AllThatHit<span style="font-weight:400;color:var(--soft);font-size:14px">쭈꾸미 계수기</span></button>
+  </div>
+
+  <p class="step-title">2 · 어땠어요?</p>
+  <div class="kinds">
+    <button class="kind" data-kind="good" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v11H3V10z"/><path d="M7 10l4-8a3 3 0 0 1 3 3v4h6a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 18.6 21H7"/></svg>
+      잘 돼요</button>
+    <button class="kind" data-kind="bad" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v6M12 17h.01"/></svg>
+      안 돼요</button>
+    <button class="kind" data-kind="idea" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg>
+      바라는 점</button>
+  </div>
+
+  <textarea id="text" maxlength="2000" placeholder="한 줄이면 돼요"></textarea>
+  <input id="contact" maxlength="120" placeholder="답장 받을 이메일·전화 (안 적어도 돼요)" autocomplete="email">
+  <button id="send" class="btn" type="button" disabled>보내기</button>
+  <p id="err"></p>
+  <p class="note" style="text-align:center">적은 연락처는 답장에만 씁니다. 메일: <a href="mailto:leescvsir@gmail.com">leescvsir@gmail.com</a></p>
+</div>
+
+<div id="done">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7 12.5l3.2 3.2L17 9"/></svg>
+  <h2>받았어요</h2>
+  <p style="color:var(--soft)">읽고 고치겠습니다. 고맙습니다.</p>
+  <p style="margin-top:22px"><a id="back" class="btn ghost" href="/">처음으로</a></p>
+</div>
+
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var app = q.get("app"), kind = q.get("kind");
+  var HINT = {
+    good: "좋았던 점 (안 적어도 돼요)",
+    bad: "어디서 막혔나요? 예: 워치에 앱이 안 보여요",
+    idea: "이런 게 있으면 좋겠어요"
+  };
+  var text = document.getElementById("text"), send = document.getElementById("send"), err = document.getElementById("err");
+
+  function pick(sel, attr, val) {
+    document.querySelectorAll(sel).forEach(function (b) { b.classList.toggle("on", b.getAttribute(attr) === val); });
+  }
+  function update() {
+    document.body.classList.toggle("hit", app === "hit");
+    if (kind) text.placeholder = HINT[kind];
+    send.disabled = !(app && kind);
+    err.textContent = "";
+  }
+  document.querySelectorAll(".app").forEach(function (b) {
+    b.onclick = function () { app = b.dataset.app; pick(".app", "data-app", app); update(); };
+  });
+  document.querySelectorAll(".kind").forEach(function (b) {
+    b.onclick = function () { kind = b.dataset.kind; pick(".kind", "data-kind", kind); update(); if (kind !== "good") text.focus(); };
+  });
+  if (app === "key" || app === "hit") pick(".app", "data-app", app); else app = null;
+  if (HINT[kind]) pick(".kind", "data-kind", kind); else kind = null;
+  update();
+
+  send.onclick = function () {
+    if (kind !== "good" && !text.value.trim()) { err.textContent = "무엇이 그랬는지 한 줄만 적어 주세요"; text.focus(); return; }
+    send.disabled = true; send.textContent = "보내는 중…";
+    var body = {
+      app: app, kind: kind, text: text.value.trim(), contact: document.getElementById("contact").value.trim(),
+      version: q.get("v") || "", device: q.get("d") || navigator.userAgent.slice(0, 120), from: q.get("from") || "web"
+    };
+    fetch("https://allthatkey-proxy.vercel.app/v1/feedback", {
+      method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body)
+    }).then(function (r) {
+      if (r.ok) {
+        document.getElementById("form").style.display = "none";
+        document.getElementById("done").style.display = "block";
+        document.getElementById("back").href = app === "hit" ? "/allthathit/" : "/allthatkey/";
+        window.scrollTo(0, 0);
+        return;
+      }
+      return r.json().then(function (j) { throw new Error(j && j.detail || "못 보냈어요"); });
+    }).catch(function (e) {
+      err.innerHTML = (e && e.message && e.message !== "Failed to fetch" ? e.message : "못 보냈어요") +
+        ' · <a href="mailto:leescvsir@gmail.com?subject=' + encodeURIComponent((app === "hit" ? "AllThatHit" : "AllThatKey") + " 의견") +
+        '&body=' + encodeURIComponent(text.value) + '">메일로 보내기</a>';
+      send.disabled = false; send.textContent = "보내기";
+    });
+  };
+})();
+</script>
+</main></body>
+</html>
