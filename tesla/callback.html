@@ -30,6 +30,19 @@
   }
   var code = q.get('code');
   if (!code) { out.innerHTML = '<p class="err">코드가 없습니다. 이 페이지는 테슬라 로그인 뒤에 열립니다.</p>'; return; }
+  // On a phone the app should have taken this address itself. When Android has
+  // not verified the link (store installs could not, until 2026-11-03), the
+  // login ended here with a code to copy and no way back - so hand the same
+  // address to the app by name: an intent naming the package needs no verification.
+  if (/Android/i.test(navigator.userAgent)) {
+    var back = 'intent://allthatai.kr/tesla/callback' + location.search +
+      '#Intent;scheme=https;package=kr.allthatai.keyprobe;end';
+    out.innerHTML = '<p>테슬라 로그인이 끝났습니다.</p>' +
+      '<a id="go" href="' + back + '" style="display:block;text-align:center;padding:16px;border-radius:12px;background:#2f6fe4;color:#fff;font-weight:700;font-size:18px;text-decoration:none">AllThatKey로 돌아가기</a>' +
+      '<p style="margin-top:14px;font-size:14px">안 열리면 위 버튼을 한 번 더 누르세요.</p>';
+    setTimeout(function(){ location.href = back; }, 300);
+    return;
+  }
   // The app on the phone intercepts this address itself; this page only exists
   // so a person in a desktop browser can hand the code on by hand.
   out.innerHTML = '<p>승인됐습니다. 아래 코드를 복사해 전달하세요. 한 번만 쓸 수 있고 몇 분 뒤 만료됩니다.</p>'
